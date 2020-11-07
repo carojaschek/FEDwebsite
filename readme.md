@@ -83,6 +83,5 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 **Screenshot(s) van de tweede pagina (small screen):**
 
-<img src="images/intake.mission1.jpeg" width="375px" alt="Sub-pagina "Mission">
-<img src="images/intake.mission2.jpeg" width="375px" alt="Sub-pagina "Mission">
-
+<img src="images/intake.mission1.jpeg" width="375px" alt="Sub-pagina Mission">
+<img src="images/intake.mission2.jpeg" width="375px" alt="Sub-pagina Mission">
