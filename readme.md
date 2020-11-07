@@ -73,12 +73,16 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 **Je focus:** surface plane
 
-**Je opdracht:** (https://schoonschipamsterdam.org/ "Schoonship Amsterdam")
+**Je opdracht:** (https://got-bag.com/ "GotBag - Duurzame tassen uit Duitsland")
 
 **Screenshot(s) van de eerste pagina (small screen):**
 
-<img src="images/intake.watisschoonship.jpeg" width="375px" alt="Het is de landigs pagina als je de website opend waar uitgelegd wordt wat het schoonship is">
+<img src="images/intake.home1.jpeg" width="375px" alt="De home-scherm">
+<img src="images/intake.home2.jpeg" width="375px" alt="De home-scherm">
+<img src="images/intake.home3.jpeg" width="375px" alt="De home-scherm">
 
 **Screenshot(s) van de tweede pagina (small screen):**
 
-<img src="images/intake.ambities.jpeg" width="375px" alt="hier worden de verschillende ambities van het schoonship uitgelegd">
+<img src="images/intake.mission1.jpeg" width="375px" alt="Sub-pagina "Mission">
+<img src="images/intake.mission2.jpeg" width="375px" alt="Sub-pagina "Mission">
+
