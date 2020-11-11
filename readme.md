@@ -1,5 +1,5 @@
 # Procesverslag
-**Auteur:** -Carolin Jaschek-
+**Auteur:** Carolin Jaschek
 
 Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Nb. de standaardstructuur en de spartaanse opmaak zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
 
@@ -61,13 +61,13 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 
 ## Breakdownschets (week 1)
-
--uitwerken voor de 1e werkgroep - eind van de eerste week-
-
+**Breakdownschets Algemeen**
+<img src="images/BreakdownschetsAlgemeen.jpg" width="375px" alt="Breakdownschets Algemeen">
+**Breakdownschets Detail**
+<img src="images/BreakdownschetsDetail.jpg" width="375px" alt="Breakdownschets Detail">
 
 
 ## Intake (week 1)
--uitwerken voor de kick-off werkgroep - begin van de eerste week-
 
 **Je startniveau:** rood
 
