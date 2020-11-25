@@ -42,14 +42,12 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 **Screenshot(s):**
 -Ik heb mijn breakdownschets omgezet naar de HTML structuur en eerste stappen gemaakt met CSS om de basics van de pagina te maken. De feedback button is al klikbaar (met JS) maar nog niet helemaal gestylt. Het hamburger menu werkt helaas nog niet.-
 
-<img src="images/Voortgang1.1.png" width:"375px" alt="Voortgang1.1">
-<img src="images/Voortgang1.2.png" width:"375px" alt="Voortgang1.2">
-<img src="images/Voortgang1.3.png" width:"375px" alt="Voortgang1.3">
-<img src="images/Voortgang1.4.png" width:"375px" alt="Voortgang1.4">
+<img src="images/Voortgang1.1.png" width="375px" alt="Voortgang1">
+<img src="images/Voortgang1.2.png" width="375px" alt="Voortgang2">
+<img src="images/Voortgang1.3.png" width="375px" alt="Voortgang3">
+<img src="images/Voortgang1.4.png" width="375px" alt="Voortgang4">
 
 ### Agenda voor meeting
-
--samen met je groepje opstellen-
 
 | Caro           | AnneFleur          | Hind         | Enis             | Julia
 | ---            | ---                | ---          | ---              | ---
