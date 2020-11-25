@@ -37,22 +37,27 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 ## Voortgang 1 (week 3)
 
 ### Stand van zaken
-
--dit ging goed & dit was lastig-
+-Het feedback formulier was lastig maar het is gelukt! Ik heb eerste ideeen over hoe ik het hamburger menu ga maken. Bij sommige elementen is de positionering nog niet helemaal goed op de verschillende mobiele devices. Ik mis nog de footer en een aantal andere elementen in de site.-
 
 **Screenshot(s):**
-
--screenshot(s) van hoe ver je bent met korte uitleg-
+-Ik heb mijn breakdownschets omgezet naar de HTML structuur en eerste stappen gemaakt met CSS om de basics van de pagina te maken. De feedback button is al klikbaar (met JS) maar nog niet helemaal gestylt. Het hamburger menu werkt helaas nog niet.-
+<img src="images/Voortgang1.1.png" width:"375px" alt="Voortgang1.1">
+<img src="images/Voortgang1.2.png" width:"375px" alt="Voortgang1.2">
+<img src="images/Voortgang1.3.png" width:"375px" alt="Voortgang1.3">
+<img src="images/Voortgang1.4.png" width:"375px" alt="Voortgang1.4">
 
 ### Agenda voor meeting
 
 -samen met je groepje opstellen-
 
-| student 1      | student 2          | student 3    | student 4        |
-| ---            | ---                | ---          | ---              |
-| dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-| an dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-| ...            | ...                | ...          | ...              |
+| Caro           | AnneFleur          | Hind         | Enis             | Julia
+| ---            | ---                | ---          | ---              | ---
+| Positioneren   |                    |              | geen vragen      | Hamburger
+| van elementen, |                    |              |                  | menu
+| hamburger menu,| ...                | ...          | ...              |
+| kruisje om     |
+| feedback form  |
+| te sluiten     |
 
 ### Verslag van meeting
 
