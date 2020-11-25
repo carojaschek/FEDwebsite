@@ -19,10 +19,27 @@ body {
 
 a {
     text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+    border-radius: .2em;
+    left: 5%;
+    right: 5%;
 }
 
 ul {
     list-style-type: none;
+}
+
+img {
+    max-width: 100vw;
+}
+
+p {
+    color: black;
+    font-size: .9em;
+    letter-spacing: .02em;
+    text-transform: none;
+    line-height: 1.7em;
 }
 
 
@@ -38,33 +55,69 @@ a {
 header {
     background-color: white;
     position: relative;
-    height: 2.8em;
+    height: 3.3em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 .5em 0 .5em;
+    padding: 0 .8em 0 .8em;
 }
 
 header h1 {
     font-size: .9em;
     display: grid;
+    text-align: left;
     grid-auto-columns: min-content;
     line-height: .9em;
     border-left: 2px solid black;
     padding: .8em 0 0 .1em;
-
 }
 
 /*******************************/
-/* LAYOUT VAN DE FEEDBACK KNOP */
+/* LAYOUT VAN DE FEEDBACK FORM */
 /*******************************/
 
+form {
+    background-color: white;
+    position: fixed;
+    width: calc(100% - 3em);
+    right: 4%;
+    top: 7em;
+    text-align: center;
+    border-radius: .2em;
+    padding: 2em 1em 2em 1em;
+    height: 8em;
+    transform: translateX(105%);
+    transition: .5s;
+    z-index: 100;
+}
 
+form.toonForm {
+    transform: translateX(0%);
+}
 
-/************************/
-/* LAYOUT VAN DE MAIN */
-/************************/
+form h2 {
+    position: absolute;
+    writing-mode: vertical-lr;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%;
+    margin: 0;
+    padding: .5em;
+    width: 2em;
+    border-radius: .1em;
+    color: white;
+    text-align: center;
+    font-size: .9em;
+    background-color: rgba(235, 89, 67, .9);
+    text-transform: none;
+    letter-spacing: .05em;
+    font-weight: 300;
+}
+
+/****************************************/
+/* LAYOUT VAN DE MAIN - eerste section */
+/****************************************/
 
 main {
     position: absolute;
@@ -74,7 +127,7 @@ main section:first-of-type {
     background-image: url(../images/titlebackpack.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    min-height: 80vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -84,16 +137,16 @@ main section:first-of-type {
 
 main section:first-of-type h1 {
     color: white;
-    font-size: 1.8em;
+    font-size: 2.1em;
     letter-spacing: .05em;
     position: absolute;
     left: 6%;
-    top: 2.8em;
+    top: 2.5em;
 }
 
-main section:first-of-type h2 {
+main section:first-of-type > h2 {
     color: white;
-    font-size: .9em;
+    font-size: 1em;
     position: absolute;
     left: 6%;
     top: 3em;
@@ -103,13 +156,146 @@ main section:first-of-type h2 {
 main section:first-of-type a {
     color: white;
     font-weight: 300;
-    font-size: .8em;
     background-color: rgb(235, 89, 67);
-    text-align: center;
     padding: 1.2em 0 1.2em 0;
-    left: 6%;
-    right: 6%;
-    top: 20em;
+    top: 19em;
     position: absolute;
     letter-spacing: .1em;
+}
+
+main section:first-of-type ul {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 23em;
+    margin: 0 1.5em 0 1.5em;
+}
+
+main section:first-of-type ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section:first-of-type ul li img {
+    width: 70%;
+    opacity: .8;
+}
+
+/****************************************/
+/* LAYOUT VAN DE MAIN - tweede section */
+/****************************************/
+
+main section:nth-of-type(2) {
+    max-width: 100vw;
+    height: 22vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 1.5em;
+}
+
+main section:nth-of-type(2) h1 {
+    color: black;
+    font-size: .9em;
+    letter-spacing: .05em;
+    position: absolute;
+}
+
+main section:nth-of-type(2) img {
+    width: 60%;
+    position: absolute;
+    top: 3em;
+}
+
+/****************************************/
+/* LAYOUT VAN DE MAIN - derde section */
+/****************************************/
+
+main section:nth-of-type(3) {
+    max-width: 100vw;
+    height: 90vh;
+    position: relative;
+    margin-top: 3em;
+}
+
+main section:nth-of-type(3) h1 {
+    color: black;
+    font-size: 1.9em;
+    letter-spacing: .02em;
+    position: absolute;
+    text-transform: none;
+        left: 5%;
+    right:5%;
+}
+
+main section:nth-of-type(3) p {
+    position: absolute;
+    top: 6em;
+    left: 5%;
+    right:5%;
+}
+
+main section:nth-of-type(3) img {
+    position: absolute;
+    top: 18.8em;
+}
+
+main section:nth-of-type(3) a {
+    position: absolute;
+    top: 30em;
+    background-color:blue;
+    color: white;
+    font-weight: 600;
+    letter-spacing: .1em;
+    padding: .7em .9em .7em .9em;
+}
+
+/****************************************/
+/* LAYOUT VAN DE MAIN - vierde section */
+/****************************************/
+
+main section:nth-of-type(4) {
+    max-width: 100vw;
+    position: relative;
+    margin-top: 3em;
+}
+
+main section:nth-of-type(4) h1 {
+    color: black;
+    font-size: 1.9em;
+    letter-spacing: .02em;
+    position: absolute;
+    text-transform: none;
+    margin-left: 7%;
+    margin-right: 7%;
+    text-align: center;
+}
+
+main section:nth-of-type(4) ol {
+    position: absolute;
+    top: 7em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    left: 5%;
+    right:5%;
+    list-style-type: none;
+    justify-content: center;
+}
+
+main section:nth-of-type(4) h2 {
+    color: blue;
+    font-size: 6em;
+}
+
+main section:nth-of-type(4) li {
+width: 10em;
+    }
+
+main section:nth-of-type(4) p {
+line-height: 1.35em;
+    padding-right: 8%;
 }
