@@ -51,16 +51,16 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 | Caro           | AnneFleur          | Hind         | Enis             | Julia
 | ---            | ---                | ---          | ---              | ---
-| Positioneren   |                    |              | geen vragen      | Hamburger
-| van elementen, |                    |              |                  | menu
-| hamburger menu,| ...                | ...          | ...              |
+| Positioneren   | Hamburger menu     | Hamburger,   | geen vragen      | Hamburger
+| van elementen, |                    | positioneren |                  | menu
+| hamburger menu,|                    |              |                  |
 | kruisje om     |
 | feedback form  |
 | te sluiten     |
 
 ### Verslag van meeting
 
--na afloop snel uitkomsten vastleggen-
+-We hebben samen een hamburger menu gemaakt. Dat was erg behulpzaam en interessant. Ik ben zeker dat het mij lukt. Daarnaast hebben wij het probleem opgelost dat de feedback button uit beeld gaat. -
 
 
 

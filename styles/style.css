@@ -13,17 +13,25 @@
 /************************/
 /* ALGEMEEN */
 /************************/
+
+:root {
+    --oranjeButton: rgb(235, 89, 67);
+    --oranjeButtonOpacity: rgba(235, 89, 67, .9);
+}
+
+main {
+    position: absolute;
+}
+
 body {
     width: 100%;
 }
 
 a {
     text-decoration: none;
-    font-size: 1em;
+    font-size: .9em;
     text-align: center;
     border-radius: .2em;
-    left: 5%;
-    right: 5%;
 }
 
 ul,
@@ -64,10 +72,10 @@ header {
     align-items: center;
     padding: 0 .8em 0 .8em;
     box-shadow: 0px 2px 2px grey;
-    z-index: 1;
+    z-index: 600;
 }
 
-header p {
+header button:first-child {
     font-size: .9em;
     display: grid;
     text-align: left;
@@ -79,13 +87,13 @@ header p {
     font-weight: 600;
 }
 
-/******************/
-/* HAMBURGER MENU */
-/******************/
+/**********************/
+/* HAMBURGER MENU ICON*/
+/**********************/
 
 div {
     background-color: black;
-    height: 3px;
+    height: 2px;
     width: 30px;
     position: relative;
 }
@@ -93,7 +101,7 @@ div {
 div::before {
     content: '';
     background-color: black;
-    height: 3px;
+    height: 2px;
     width: 30px;
     top: -.5em;
     position: absolute;
@@ -102,10 +110,43 @@ div::before {
 div::after {
     content: '';
     background-color: black;
-    height: 3px;
+    height: 2px;
     width: 30px;
     top: .5em;
     position: absolute;
+}
+
+/**********************/
+/* HAMBURGER MENU OPEN*/
+/**********************/
+nav {
+    background-color: white;
+    position: fixed;
+    top: 3.5em;
+    right: 0;
+    font-weight: 600;
+    letter-spacing: .1em;
+    width: 70vw;
+    height: 100vh;
+    font-size: .95em;
+    transform: translateX(98vw);
+    transition: .3s;
+}
+
+nav.toonMenu {
+    transform: translateX(0);
+    }
+
+nav ul li a {
+    padding: 1.3em 1.5em 1.3em 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav ul li button {
+    transform: rotate(90deg);
+    font-size: 1.2em;
 }
 
 /*******************************/
@@ -115,48 +156,61 @@ div::after {
 form {
     background-color: white;
     position: fixed;
-    width: calc(100% - 3em);
-    right: 4%;
+    width: calc(100% - 20vw);
+    right: 0;
     top: 7em;
     text-align: center;
     border-radius: .2em;
-    padding: 2em 1em 2em 1em;
+    padding: 2em .5em 2em .5em;
     height: 8em;
-    transform: translateX(105%);
-    transition: .5s;
-    z-index: 500;
+    transform: translateX(100%);
+    transition: .3s;
+    z-index: 900;
 }
 
 form.toonForm {
-    transform: translateX(0%);
+    transform: translateX(-4vw);
 }
 
-form p {
+form button:first-of-type.verwijderFeedbackButton {
+    opacity: 0;
+}
+
+form button:first-of-type {
     position: absolute;
-    writing-mode: vertical-lr;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 100%;
+    top: calc(50% - 1.2em);
+    right: calc(100% - 1.9em);
     margin: 0;
     padding: .5em;
-    width: 2em;
+    width: 6em;
     border-radius: .1em;
     color: white;
     text-align: center;
     font-size: .9em;
-    background-color: rgba(235, 89, 67, .9);
+    background-color: var(--oranjeButtonOpacity);
     text-transform: none;
     letter-spacing: .05em;
     font-weight: 300;
+    transform: rotate(-90deg);
+}
+
+form button:last-of-type {
+    position: absolute;
+    top: -.65em;
+    right: .8em;
+    margin: 0;
+    width: 1.2em;
+    height: auto;
+    border-radius: 1em;
+    color: white;
+    font-size: 1.5em;
+    background-color: var(--oranjeButtonOpacity);
+    text-align: center;
 }
 
 /****************************************/
 /* LAYOUT VAN DE MAIN - eerste section */
 /****************************************/
-
-main {
-    position: absolute;
-}
 
 main section:first-of-type {
     background-image: url(../images/titlebackpack.jpg);
@@ -172,45 +226,43 @@ main section:first-of-type {
 
 main section:first-of-type h1 {
     color: white;
-    font-size: 2.1em;
+    font-size: 1.8em;
     letter-spacing: .05em;
     position: absolute;
-    left: 6%;
-    top: 2.5em;
+    left: 5%;
+    margin-top: 2.2em;
 }
 
 main section:first-of-type > h2 {
     color: white;
-    font-size: 1em;
+    font-size: .85em;
+    letter-spacing: .06em;
     position: absolute;
-    left: 6%;
-    top: 3em;
+    left: 5%;
+    order: -1;
     font-weight: 300;
+    margin-top: 2.2em;
 }
 
 main section:first-of-type a {
     color: white;
     font-weight: 300;
-    background-color: rgb(235, 89, 67);
+    background-color: var(--oranjeButton);
     padding: 1.2em 0 1.2em 0;
     top: 19em;
     position: absolute;
     letter-spacing: .1em;
+    width: calc(100vw - 10%);
+    max-width: 40em;
+
 }
 
 main section:first-of-type ul {
     position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     bottom: 1.5em;
-    margin: 0 1.5em 0 1.5em;
-}
-
-main section:first-of-type ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 main section:first-of-type ul li img {
@@ -228,7 +280,6 @@ main section:nth-of-type(2) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
     margin-top: 1.5em;
 }
 
@@ -236,13 +287,12 @@ main section:nth-of-type(2) h3 {
     color: black;
     font-size: .9em;
     letter-spacing: .05em;
-    position: absolute;
 }
 
 main section:nth-of-type(2) img {
     width: 60%;
-    position: absolute;
-    top: 3em;
+    position: relative;
+    top: 1em;
 }
 
 /****************************************/
@@ -334,4 +384,16 @@ main section:nth-of-type(4) li {
 main section:nth-of-type(4) li p {
     line-height: 1.35em;
     padding-right: 8%;
+}
+
+
+
+@media (min-width:400px) {
+    main {
+        background-color: aquamarine;
+    }
+
+    p {
+        font-size: 1.05em;
+    }
 }
