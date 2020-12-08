@@ -10,22 +10,13 @@
     font-family: 'Roboto', 'Arial', sans-serif;
 }
 
-/************************/
+/************/
 /* ALGEMEEN */
-/************************/
+/************/
 
 :root {
     --oranjeButton: rgb(235, 89, 67);
     --oranjeButtonOpacity: rgba(235, 89, 67, .9);
-}
-
-
-body {
-    width: 100vw;
-}
-
-main {
-    width: 100vw;
 }
 
 a {
@@ -41,7 +32,7 @@ ol {
 }
 
 img {
-    max-width: 100vw;
+    max-width: 100%;
 }
 
 p {
@@ -51,7 +42,6 @@ p {
     text-transform: none;
     line-height: 1.7em;
 }
-
 
 h1,
 h2,
@@ -63,11 +53,12 @@ a {
 /************************/
 /* LAYOUT VAN DE HEADER */
 /************************/
+
 header {
     background-color: white;
     position: relative;
     height: 3.3em;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -75,7 +66,6 @@ header {
     padding: 0 .8em 0 .8em;
     box-shadow: 0px 2px 2px grey;
     z-index: 600;
-    box-sizing: border-box;
 }
 
 header > a {
@@ -91,38 +81,72 @@ header > a {
     border-radius: 0;
 }
 
-/**********************/
-/* HAMBURGER MENU ICON*/
-/**********************/
+/**************************************/
+/* HAMBURGER MENU BUTTON MET ANIMATIE */
+/**************************************/
+header button {
+    background-color: white;
+}
 
-div {
-    background-color: black;
-    height: 2px;
-    width: 30px;
+/* de hamburger-button */
+header > button {
     position: relative;
+    width: 2em;
+    height: 2em;
+    appearance: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-div::before {
-    content: '';
-    background-color: black;
-    height: 2px;
-    width: 30px;
-    top: -.5em;
+/* de streepjes */
+header button span {
+    /* hiermee worden de span uit de normale flow gehaald */
+    /* in combinatie met flex van de button staan ze dan over elkaar heen */
     position: absolute;
-}
-
-div::after {
-    content: '';
-    background-color: black;
+    /* maten en een kleurtje */
+    width: 1.9em;
     height: 2px;
-    width: 30px;
-    top: .5em;
-    position: absolute;
+    background-color: Black;
+    /* zodat de beweging op de terugweg .5 seconde duurt */
+    transition: .5s
 }
 
-/**********************/
-/* HAMBURGER MENU OPEN*/
-/**********************/
+header button span:first-of-type {
+    transform: translatey(-8px);
+}
+
+header button span:last-of-type {
+    transform: translatey(8px);
+}
+
+/* class toevoegen voor de animatie in JS */
+.menuOpen button span {
+    /* zodat de beweging op de heenweg .5 seconde duurt */
+    /* met ease-out begint de beweging snel en eindigt langzaam */
+    transition: .5s ease-out;
+}
+
+.menuOpen button span:first-of-type {
+    /* eerste streepje gaat terug naar het midden */
+    /* en draait ondertussen 230 graden */
+    transform: translatey(0) rotate(230deg);
+}
+
+.menuOpen button span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menuOpen button span:last-of-type {
+    /* het laatste streepje gaat terug naar het midden */
+    /* en draait ondertussen -230 graden */
+    transform: translatey(0) rotate(-230deg);
+}
+
+/*******************************************/
+/* HAMBURGER MENU OPEN - OPMAAK VAN DE NAV */
+/*******************************************/
 nav {
     background-color: white;
     position: fixed;
@@ -133,8 +157,7 @@ nav {
     width: 70vw;
     height: 100vh;
     font-size: .95em;
-    transform: translateX(100vw);
-    transition: .3s;
+    transform: translateX(100%);
     display: none;
 }
 
@@ -168,10 +191,10 @@ form {
     text-align: center;
     border-radius: .2em;
     padding: 2em .5em 2em .5em;
-    height: 8em;
+    height: 10em;
     transform: translateX(100%);
     transition: .3s;
-    z-index: 900;
+    z-index: 400;
 }
 
 form.toonForm {
@@ -192,7 +215,7 @@ form button:first-of-type {
     border-radius: .1em;
     color: white;
     text-align: center;
-    font-size: .9em;
+    font-size: .8em;
     background-color: var(--oranjeButtonOpacity);
     text-transform: none;
     letter-spacing: .05em;
@@ -210,8 +233,48 @@ form button:last-of-type {
     border-radius: 1em;
     color: white;
     font-size: 1.5em;
-    background-color: var(--oranjeButtonOpacity);
+    background-color: var(--oranjeButton);
     text-align: center;
+}
+
+legend {
+    letter-spacing: .045em;
+    line-height: 1.4em;
+    margin-bottom: 1.2em;
+}
+
+form label {
+    padding: .5em;
+    cursor: pointer;
+}
+
+form img {
+    width: 30px;
+}
+
+/* hide the default radiobuttons*/
+input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* add animation for the emojis */
+@keyframes emoji-animatie {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5) rotate(1turn);
+    }
+}
+
+label img.groter {
+    animation-name: emoji-animatie;
+    animation-duration:.5s;
 }
 
 /****************************************/
@@ -223,7 +286,7 @@ main section:first-of-type {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 80vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -281,7 +344,7 @@ main section:first-of-type ul li img {
 /****************************************/
 
 main section:nth-of-type(2) {
-    max-width: 100vw;
+    max-width: 100%;
     height: 22vh;
     display: flex;
     flex-direction: column;
@@ -306,7 +369,7 @@ main section:nth-of-type(2) img {
 /****************************************/
 
 main section:nth-of-type(3) {
-    max-width: 100vw;
+    max-width: 100%;
     height: 90vh;
     position: relative;
     margin-top: 3em;
@@ -332,6 +395,7 @@ main section:nth-of-type(3) p {
 main section:nth-of-type(3) img {
     position: absolute;
     top: 18.8em;
+    width: 100%;
 }
 
 main section:nth-of-type(3) a {

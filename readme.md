@@ -7,7 +7,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ## Bronnenlijst
 1. Sanne ´t Hooft: JS 3-stap oefening 2 "Humpty"
-2. -bron 2-
+2. Sanne ´t Hooft: Moving Hamburger
 3. -...-
 
 
