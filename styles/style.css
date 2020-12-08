@@ -131,7 +131,8 @@ header button span:last-of-type {
 .menuOpen button span:first-of-type {
     /* eerste streepje gaat terug naar het midden */
     /* en draait ondertussen 230 graden */
-    transform: translatey(0) rotate(230deg);
+    transform: translatey(0) rotate(225deg);
+    width: 1.7em;
 }
 
 .menuOpen button span:nth-of-type(2) {
@@ -141,7 +142,8 @@ header button span:last-of-type {
 .menuOpen button span:last-of-type {
     /* het laatste streepje gaat terug naar het midden */
     /* en draait ondertussen -230 graden */
-    transform: translatey(0) rotate(-230deg);
+    transform: translatey(0) rotate(-225deg);
+    width: 1.7em;
 }
 
 /*******************************************/

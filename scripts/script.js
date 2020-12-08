@@ -24,10 +24,17 @@ function menuAnimatie() {
     hetMenu.classList.toggle("toonMenu");
 }
 
+/* klikken op de emojis in de feedback form */
 
-var emojiAnimatie = document.querySelector("form img");
-emojiAnimatie.addEventListener("click", wordtGroter);
 
-function wordtGroter() {
-    emojiAnimatie.classList.toggle("groter");
+var emojiAnimatie = document.querySelectorAll("form img");
+
+function wordtGroter(emoji) {
+    emoji.classList.toggle("groter");
 }
+
+function voegEventToe(emoji){
+    emoji.addEventListener("click", wordtGroter(emoji));
+}
+emojiAnimatie.forEach(voegEventToe);
+console.log(emojiAnimatie);
