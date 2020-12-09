@@ -453,6 +453,7 @@ main section:nth-of-type(4) li p:first-of-type {
 
 main section:nth-of-type(4) li {
     width: 9em;
+    position: relative;
 }
 
 main section:nth-of-type(4) li p {
@@ -462,9 +463,9 @@ main section:nth-of-type(4) li p {
 }
 
 ol img{
-    position: relative;
+    position: absolute;
     width: 5.5em;
-    top: -5em;
+    top: 1em;
     left: 1.8em;
 }
 

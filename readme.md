@@ -30,8 +30,32 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ## Voortgang 2 (week 5)
 
--same as voortgang 1-
+### Stand van zaken
+-Ik heb de eerste pagina bijna helemaal af. Het hamburger menu en de feedback form werken en ik heb een animatie bij de emojis toegevoegd. Ik wil de aankomende week nog een carousel toevoegen bij "bekannt aus" en gaan experimenteren met de geleerde onderwerpen (leuke details toevoegen).-
 
+**Screenshots:**
+
+<img src="images/Voortgang2.1.png" width="375px" alt="Voortgang1">
+<img src="images/Voortgang2.2.png" width="375px" alt="Voortgang2">
+<img src="images/Voortgang2.3.png" width="375px" alt="Voortgang3">
+<img src="images/Voortgang2.4.png" width="375px" alt="Voortgang4">
+<img src="images/Voortgang2.5.png" width="375px" alt="Voortgang5">
+
+
+### Agenda voor meeting
+
+| Caro           | AnneFleur          | Hind         | Enis             | Julia
+| ---            | ---                | ---          | ---              | ---
+| position van   |                    |              |                  |
+| de nav en      |                    |              |                  |
+| uitklappen sub |                    |              |                  |
+| menu, tips     |
+| voor de        |
+| carousel       |
+
+### Verslag van meeting
+
+-later invullen-
 
 
 ## Voortgang 1 (week 3)
