@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // JavaScript Document
 
 /* klikken op de Feedback Button - form wordt getoont door class toe te voegen en weer weggehaald (toggle)*/
@@ -25,16 +27,11 @@ function menuAnimatie() {
 }
 
 /* klikken op de emojis in de feedback form */
-
-
 var emojiAnimatie = document.querySelectorAll("form img");
 
-function wordtGroter(emoji) {
-    emoji.classList.toggle("groter");
-}
+emojiAnimatie.forEach(emoji => {
+    emoji.addEventListener("click", () => {
+        emoji.classList.toggle("groter");
+    })
+});
 
-function voegEventToe(emoji){
-    emoji.addEventListener("click", wordtGroter(emoji));
-}
-emojiAnimatie.forEach(voegEventToe);
-console.log(emojiAnimatie);

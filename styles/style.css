@@ -17,6 +17,7 @@
 :root {
     --oranjeButton: rgb(235, 89, 67);
     --oranjeButtonOpacity: rgba(235, 89, 67, .9);
+    --blue: rgb(0, 0, 153);
 }
 
 a {
@@ -37,7 +38,7 @@ img {
 
 p {
     color: black;
-    font-size: .9em;
+    font-size: .95em;
     letter-spacing: .02em;
     text-transform: none;
     line-height: 1.7em;
@@ -180,6 +181,11 @@ nav ul li button {
     font-size: 1.2em;
 }
 
+nav ul li a::after {
+    content: "\f078";
+    font-family: FontAwesome;
+}
+
 /*******************************/
 /* LAYOUT VAN DE FEEDBACK FORM */
 /*******************************/
@@ -197,6 +203,7 @@ form {
     transform: translateX(100%);
     transition: .3s;
     z-index: 400;
+    max-width: 500px;
 }
 
 form.toonForm {
@@ -246,7 +253,7 @@ legend {
 }
 
 form label {
-    padding: .5em;
+    padding: .25em;
     cursor: pointer;
 }
 
@@ -276,7 +283,7 @@ input {
 
 label img.groter {
     animation-name: emoji-animatie;
-    animation-duration:.5s;
+    animation-duration: .5s;
 }
 
 /****************************************/
@@ -301,7 +308,7 @@ main section:first-of-type h1 {
     letter-spacing: .05em;
     position: absolute;
     left: 5%;
-    margin-top: 2.2em;
+    margin-top: 2.5em;
 }
 
 main section:first-of-type > h2 {
@@ -312,7 +319,7 @@ main section:first-of-type > h2 {
     left: 5%;
     order: -1;
     font-weight: 300;
-    margin-top: 2.2em;
+    margin-top: 3em;
 }
 
 main section:first-of-type a {
@@ -322,23 +329,28 @@ main section:first-of-type a {
     padding: 1.2em 0 1.2em 0;
     top: 19em;
     position: absolute;
-    letter-spacing: .1em;
+    letter-spacing: .07em;
     width: calc(100vw - 10%);
     max-width: 40em;
 
 }
 
-main section:first-of-type ul {
+/*de drie witte circles*/
+main section:first-of-type div {
+    width: 4.5em;
+    height: 4.5em;
+    border: 3px solid white;
+    border-radius: 50%;
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     bottom: 1.5em;
 }
 
-main section:first-of-type ul li img {
-    width: 70%;
-    opacity: .8;
+main section:first-of-type div:first-of-type {
+    left: 10%;
+}
+
+main section:first-of-type div:last-of-type {
+    right: 10%;
 }
 
 /****************************************/
@@ -372,8 +384,6 @@ main section:nth-of-type(2) img {
 
 main section:nth-of-type(3) {
     max-width: 100%;
-    height: 90vh;
-    position: relative;
     margin-top: 3em;
 }
 
@@ -381,33 +391,31 @@ main section:nth-of-type(3) h4 {
     color: black;
     font-size: 1.9em;
     letter-spacing: .02em;
-    position: absolute;
     text-transform: none;
-    left: 5%;
-    right: 5%;
+    margin: 0 5% 0 5%;
 }
 
 main section:nth-of-type(3) p {
-    position: absolute;
     top: 6em;
-    left: 5%;
-    right: 5%;
+    margin: 4% 5% 4% 5%;
 }
 
 main section:nth-of-type(3) img {
-    position: absolute;
-    top: 18.8em;
     width: 100%;
 }
 
 main section:nth-of-type(3) a {
-    position: absolute;
-    top: 30em;
-    background-color: blue;
+    margin: 0 5% 3% 5%;
+    background-color: var(--blue);
     color: white;
     font-weight: 600;
     letter-spacing: .1em;
-    padding: .7em .9em .7em .9em;
+    padding: .7em .9em;
+    width: calc(100vw - 10%);
+    max-width: 40em;
+    position: relative;
+    bottom: 4.5em;
+    display: inline-block;
 }
 
 /****************************************/
@@ -416,56 +424,119 @@ main section:nth-of-type(3) a {
 
 main section:nth-of-type(4) {
     max-width: 100vw;
+    margin: 0 5% 0 5%;
     position: relative;
-    margin-top: 3em;
 }
 
 main section:nth-of-type(4) h5 {
     color: black;
     font-size: 1.9em;
     letter-spacing: .02em;
-    position: absolute;
     text-transform: none;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-bottom: .8em;
     text-align: center;
 }
 
 main section:nth-of-type(4) ol {
-    position: absolute;
-    top: 7em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    left: 5%;
-    right: 5%;
     justify-content: center;
 }
 
 main section:nth-of-type(4) li p:first-of-type {
-    color: blue;
+    color: var(--blue);
     font-size: 6em;
     font-weight: 700;
     line-height: 1em;
 }
 
 main section:nth-of-type(4) li {
-    width: 10em;
+    width: 9em;
 }
 
 main section:nth-of-type(4) li p {
     line-height: 1.35em;
     padding-right: 8%;
+    font-size: .85em;
+}
+
+ol img{
+    position: relative;
+    width: 5.5em;
+    top: -5em;
+    left: 1.8em;
+}
+
+/****************************************/
+/* LAYOUT VAN DE MAIN - vijfde section */
+/****************************************/
+main section:nth-of-type(5) {
+    margin: 12% 5% 10% 5%;
+    display: flex;
+    flex-direction: column-reverse
+}
+
+main section:nth-of-type(5) h6 {
+    font-size: 1.2em;
+    margin-top: .7em;
+}
+
+/************************/
+/* LAYOUT VAN DE FOOTER */
+/************************/
+footer {
+    width: 100%;
+    background-color: black;
+    padding: 6% 5% 3% 5%;
+    position: absolute;
+}
+
+footer ul li {
+    margin: 1.5em 0;
+}
+
+footer ul li {
+    color: white;
+    font-size: .75em;
+    font-weight: 550;
+}
+
+footer ul li a {
+    color: white;
+    text-transform: uppercase;
+}
+
+footer ul li a:active,
+a:hover {
+    color: var(--oranjeButton);
+}
+
+footer ul span {
+    color: red;
 }
 
 
-
 @media (min-width:400px) {
-    main {
-        background-color: aquamarine;
+    p {
+        font-size: 1.1em;
+    }
+    main section:first-of-type h1 {
+        font-size: 2.3em;
+        margin-right: 5%;
     }
 
-    p {
-        font-size: 1.05em;
+    main section:first-of-type h2 {
+        font-size: 1.1em;
+        letter-spacing: .08em;
     }
+
+    main section:first-of-type a {
+    top: 28em;
+}
+    main section:nth-of-type(4) li p {
+    line-height: 1.5em;
+    font-size: .95em;
+}
+
 }
