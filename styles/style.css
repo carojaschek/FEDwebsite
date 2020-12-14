@@ -57,7 +57,9 @@ a {
 
 header {
     background-color: white;
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
     height: 3.3em;
     width: 100%;
     display: flex;
@@ -162,6 +164,7 @@ nav {
     font-size: .95em;
     transform: translateX(100%);
     display: none;
+    transition: .5s;
 }
 
 nav.toonMenu {
@@ -462,7 +465,7 @@ main section:nth-of-type(4) li p {
     font-size: .85em;
 }
 
-ol img{
+ol img {
     position: absolute;
     width: 5.5em;
     top: 1em;
@@ -522,6 +525,7 @@ footer ul span {
     p {
         font-size: 1.1em;
     }
+
     main section:first-of-type h1 {
         font-size: 2.3em;
         margin-right: 5%;
@@ -533,11 +537,12 @@ footer ul span {
     }
 
     main section:first-of-type a {
-    top: 28em;
-}
+        top: 28em;
+    }
+
     main section:nth-of-type(4) li p {
-    line-height: 1.5em;
-    font-size: .95em;
-}
+        line-height: 1.5em;
+        font-size: .95em;
+    }
 
 }

@@ -13,6 +13,8 @@ function formHeenEnWeer(event) {
     hetFormulier.classList.toggle("toonForm");
     feedbackButtonWeg.classList.add("verwijderFeedbackButton");
 }
+    /*var sluitFeedback = document.querySelector("form button:last-of-type");
+    sluitFeedback.addEventListener("click", )*/
 
 
 /* klikken op het hamburger menu - streepjes worden een kruisje en menu opent */
