@@ -8,6 +8,25 @@
     padding: 0;
     border: 0;
     font-family: 'Roboto', 'Arial', sans-serif;
+        scrollbar-color: transparent transparent;
+    /* thumb and track color */
+    scrollbar-width: 0px;
+    *::-webkit-scrollbar {
+    width: 0;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+}
+
+* {
+    -ms-overflow-style: none;
+}
 }
 
 /************/
@@ -367,6 +386,7 @@ main section:nth-of-type(2) {
     flex-direction: column;
     align-items: center;
     margin-top: 1.5em;
+    position: relative;
 }
 
 main section:nth-of-type(2) h3 {
@@ -375,11 +395,52 @@ main section:nth-of-type(2) h3 {
     letter-spacing: .05em;
 }
 
+/* Layout van de carousel */
+.viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.viewport li {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 main section:nth-of-type(2) img {
     width: 60%;
-    position: relative;
-    top: 1em;
 }
+
+/* styling van de zwarte bolletjes*/
+main section:nth-of-type(2) aside {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+section ol li {
+    display: inline-block;
+}
+
+aside a {
+    display: inline-block;
+    width: .6em;
+    height: .6em;
+    background-color: black;
+    margin: .15em;
+    border-radius: 50%;
+}
+
 
 /****************************************/
 /* LAYOUT VAN DE MAIN - derde section */
@@ -465,11 +526,11 @@ main section:nth-of-type(4) li p {
     font-size: .85em;
 }
 
-ol img {
+main section:nth-of-type(4) ol img {
     position: absolute;
-    width: 5.5em;
+    width: 3.2em;
     top: 1em;
-    left: 1.8em;
+    left: 2.7em;
 }
 
 /****************************************/

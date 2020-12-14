@@ -8,7 +8,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 ## Bronnenlijst
 1. Sanne ´t Hooft: JS 3-stap oefening 2 "Humpty"
 2. Sanne ´t Hooft: Moving Hamburger
-3. -...-
+3. [CSS-only carousel](https://css-tricks.com/css-only-carousel/)
 
 
 
@@ -51,9 +51,9 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 | position van   |                    |              |                  |
 | de nav en      |                    |              |                  |
 | uitklappen sub |                    |              |                  |
-| menu, tips     |
-| voor de        |
-| carousel       |
+| menu, tips     |                    |              |                  |
+| voor de        |                    |              |                  |
+| carousel       |                    |              |                  |
 
 ### Verslag van meeting
 -We waren maar met z´n drieen dus was er niet veel te bespreken. Ik heb de vragen gesteld, die ik had en ben ermee verder gekomen. Verder zag mijn code er netjes uit en moest ik alleen de groote van de screenshots in mijn procesverslag aanpassen. Het gaat goed en ik vind het steeds leuker om te gaan experimenteren met de mogelijkheden van CSS. Soms loop ik vast maar gelukkig is Marvin er dan!-
