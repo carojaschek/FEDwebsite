@@ -25,9 +25,10 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 ## Voortgang 3 (week 6)
 
 ### Stand van zaken
-- De homepagina is af. Zelfs het carousel is gelukt (ben er wel trots op!) Ik heb alleen nog twee vragen erover: hoe ik het beste de kleur van de bolletjes kan veranderen, als de gebruiker verder klikt en hoe ik het springen naar de bovenkant kan voorkomen. Deze week was ik dus bezig met het carousel en ik heb ervoor gezorgt dat mijn site toegankelijker wordt door meer states aan de buttons toe te voegen-
+-De homepagina is af. Zelfs het carousel is gelukt (ben er wel trots op!) Ik heb alleen nog twee vragen erover: hoe ik het beste de kleur van de bolletjes kan veranderen, als de gebruiker verder klikt en hoe ik het springen naar de bovenkant kan voorkomen. Deze week was ik dus bezig met het carousel en ik heb ervoor gezorgt dat mijn site toegankelijker wordt door meer states aan de buttons toe te voegen-
 
 **Screenshots:**
+
 <img src="images/Voortgang3.1.PNG" width="150px" alt="Voortgang1">
 <img src="images/Voortgang3.2.PNG" width="150px" alt="Voortgang2">
 <img src="images/Voortgang3.3.PNG" width="150px" alt="Voortgang3">
@@ -46,7 +47,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 
 ## Toegankelijkheid
-- Ik heb de screenreader van windows gebruikt om mijn site te bereiken. Het ging op zich goed. De koppen en teksten werden voorgelezen, de buttons waren duidelijk en ook de ordered list. Ik weet gelukkig hoe mijn site eruit ziet maar ik denk dat het navigeren best moeilijk is als je helemaal niks ziet. Ik denk dat ik mijn alt-teksten nog beter kan maken. De navigatie werd helemaal niet voorgelezen, maar ik weet ook niet waar dat aan ligt. Leuk om deze ervaring een keertje te maken! Ik wist niet eens dat een screenreader op mijn laptop staat...-
+-Ik heb de screenreader van windows gebruikt om mijn site te bereiken. Het ging op zich goed. De koppen en teksten werden voorgelezen, de buttons waren duidelijk en ook de ordered list. Ik weet gelukkig hoe mijn site eruit ziet maar ik denk dat het navigeren best moeilijk is als je helemaal niks ziet. Ik denk dat ik mijn alt-teksten nog beter kan maken. De navigatie werd helemaal niet voorgelezen, maar ik weet ook niet waar dat aan ligt. Leuk om deze ervaring een keertje te maken! Ik wist niet eens dat een screenreader op mijn laptop staat...-
 
 ## Voortgang 2 (week 5)
 
@@ -97,9 +98,9 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 | Positioneren   | Hamburger menu     | Hamburger,   | geen vragen      | Hamburger
 | van elementen, |                    | positioneren |                  | menu
 | hamburger menu,|                    |              |                  |
-| kruisje om     |
-| feedback form  |
-| te sluiten     |
+| kruisje om     |                    |              |                  |
+| feedback form  |                    |              |                  |
+| te sluiten     |                    |              |                  |
 
 ### Verslag van meeting
 
