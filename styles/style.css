@@ -1,3 +1,10 @@
+/*
+- animatie weer erin (voorkomt springen)
+- bolletjes met js (innerHTML)
+classes toevoegen en weghalen
+- default met randje
+*/
+
 /* CSS Document */
 *,
 *::after,
@@ -8,10 +15,13 @@
     padding: 0;
     border: 0;
     font-family: 'Roboto', 'Arial', sans-serif;
-        scrollbar-color: transparent transparent;
+    scrollbar-color: transparent transparent;
     /* thumb and track color */
     scrollbar-width: 0px;
-    *::-webkit-scrollbar {
+}
+
+
+*::-webkit-scrollbar {
     width: 0;
 }
 
@@ -27,7 +37,6 @@
 * {
     -ms-overflow-style: none;
 }
-}
 
 /************/
 /* ALGEMEEN */
@@ -35,8 +44,10 @@
 
 :root {
     --oranjeButton: rgb(235, 89, 67);
+    --oranjeButtonHover: rgb(255, 130, 95);
     --oranjeButtonOpacity: rgba(235, 89, 67, .9);
     --blue: rgb(0, 0, 153);
+    --blueHover: rgb(91, 55, 209);
 }
 
 a {
@@ -61,6 +72,11 @@ p {
     letter-spacing: .02em;
     text-transform: none;
     line-height: 1.7em;
+}
+
+button,
+a {
+    cursor: pointer;
 }
 
 h1,
@@ -130,7 +146,7 @@ header button span {
     /* maten en een kleurtje */
     width: 1.9em;
     height: 2px;
-    background-color: Black;
+    background-color: black;
     /* zodat de beweging op de terugweg .5 seconde duurt */
     transition: .5s
 }
@@ -268,6 +284,15 @@ form button:last-of-type {
     text-align: center;
 }
 
+form button:hover,
+form button:active {
+    background-color: var(--oranjeButtonHover);
+}
+
+form button:focus {
+    outline: 2px double var(--oranjeButton);
+}
+
 legend {
     letter-spacing: .045em;
     line-height: 1.4em;
@@ -354,7 +379,10 @@ main section:first-of-type a {
     letter-spacing: .07em;
     width: calc(100vw - 10%);
     max-width: 40em;
+}
 
+main section:first-of-type a:hover {
+    background-color: var(--oranjeButtonHover);
 }
 
 /*de drie witte circles*/
@@ -482,6 +510,15 @@ main section:nth-of-type(3) a {
     display: inline-block;
 }
 
+main section:nth-of-type(3) a:hover,
+a:active {
+    background-color: var(--blueHover);
+}
+
+main section:nth-of-type(3) a:focus {
+    outline: 2px double var(--blue);
+}
+
 /****************************************/
 /* LAYOUT VAN DE MAIN - vierde section */
 /****************************************/
@@ -575,6 +612,10 @@ footer ul li a {
 footer ul li a:active,
 a:hover {
     color: var(--oranjeButton);
+}
+
+footer ul li a:focus {
+    text-decoration: underline;
 }
 
 footer ul span {

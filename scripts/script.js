@@ -28,12 +28,16 @@ function menuAnimatie() {
     hetMenu.classList.toggle("toonMenu");
 }
 
+/*event.target om */
+
 /* klikken op de emojis in de feedback form */
 var emojiAnimatie = document.querySelectorAll("form img");
 
 emojiAnimatie.forEach(emoji => {
-    emoji.addEventListener("click", () => {
+    emoji.addEventListener("click", (event) => {
         emoji.classList.toggle("groter");
+        event.target.style.border = '2px solid black'
+        event.target.style.borderRadius = '50%';
     })
 });
 

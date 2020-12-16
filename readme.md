@@ -24,7 +24,25 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ## Voortgang 3 (week 6)
 
--same as voortgang 1-
+### Stand van zaken
+- De homepagina is af. Zelfs het carousel is gelukt (ben er wel trots op!) Ik heb alleen nog twee vragen erover: hoe ik het beste de kleur van de bolletjes kan veranderen, als de gebruiker verder klikt en hoe ik het springen naar de bovenkant kan voorkomen. Deze week was ik dus bezig met het carousel en ik heb ervoor gezorgt dat mijn site toegankelijker wordt door meer states aan de buttons toe te voegen-
+
+**Screenshots:**
+<img src="images/Voortgang3.1.PNG" width="150px" alt="Voortgang1">
+<img src="images/Voortgang3.2.PNG" width="150px" alt="Voortgang2">
+<img src="images/Voortgang3.3.PNG" width="150px" alt="Voortgang3">
+
+### Agenda voor meeting
+
+| Caro           | AnneFleur          | Hind         | Enis             | Julia
+| ---            | ---                | ---          | ---              | ---
+| bolletjes      |                    |              |                  |
+| carousel en    |                    |              |                  |
+| springen       |                    |              |                  |
+| naar boven     |                    |              |                  |
+
+### Verslag van meeting
+-Komt later-
 
 
 ## Toegankelijkheid
