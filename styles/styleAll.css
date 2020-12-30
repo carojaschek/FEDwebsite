@@ -1,0 +1,442 @@
+/* CSS Document voor de algemene dingen */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    color: black;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    scrollbar-color: transparent transparent;
+    /* thumb and track color */
+    scrollbar-width: 0px;
+}
+
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+}
+
+* {
+    -ms-overflow-style: none;
+}
+
+body {
+    --oranjeButton: rgb(235, 89, 67);
+    --oranjeButtonHover: rgb(255, 130, 95);
+    --oranjeButtonOpacity: rgba(235, 89, 67, .9);
+    --blue: rgb(0, 0, 153);
+    --blueHover: rgb(91, 55, 209);
+}
+
+a {
+    text-decoration: none;
+    font-size: .9em;
+    text-align: center;
+    border-radius: .2em;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    color: black;
+    font-size: 1em;
+    letter-spacing: .02em;
+    text-transform: none;
+    line-height: 1.7em;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+a {
+    text-transform: uppercase;
+}
+
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+/************************/
+/* LAYOUT VAN DE HEADER */
+/************************/
+
+header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 3.3em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .8em 0 .8em;
+    box-shadow: 0px 2px 2px grey;
+    z-index: 600;
+}
+
+header > a {
+    font-size: .9em;
+    display: grid;
+    text-align: left;
+    grid-auto-columns: min-content;
+    line-height: .9em;
+    border-left: 2px solid black;
+    padding: .8em 0 0 .1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0;
+}
+
+/**************************************/
+/* HAMBURGER MENU BUTTON MET ANIMATIE */
+/**************************************/
+header button {
+    background-color: white;
+}
+
+/* de hamburger-button */
+header > button {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    appearance: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* de streepjes */
+header button span {
+    /* hiermee worden de span uit de normale flow gehaald */
+    /* in combinatie met flex van de button staan ze dan over elkaar heen */
+    position: absolute;
+    /* maten en een kleurtje */
+    width: 1.9em;
+    height: 2px;
+    background-color: black;
+    /* zodat de beweging op de terugweg .5 seconde duurt */
+    transition: .5s
+}
+
+header button span:first-of-type {
+    transform: translatey(-8px);
+}
+
+header button span:last-of-type {
+    transform: translatey(8px);
+}
+
+/* class toevoegen voor de animatie in JS */
+.menuOpen button span {
+    /* zodat de beweging op de heenweg .5 seconde duurt */
+    /* met ease-out begint de beweging snel en eindigt langzaam */
+    transition: .5s ease-out;
+}
+
+.menuOpen button span:first-of-type {
+    /* eerste streepje gaat terug naar het midden */
+    /* en draait ondertussen 230 graden */
+    transform: translatey(0) rotate(225deg);
+    width: 1.7em;
+}
+
+.menuOpen button span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menuOpen button span:last-of-type {
+    /* het laatste streepje gaat terug naar het midden */
+    /* en draait ondertussen -230 graden */
+    transform: translatey(0) rotate(-225deg);
+    width: 1.7em;
+}
+
+/*******************************************/
+/* HAMBURGER MENU OPEN - OPMAAK VAN DE NAV */
+/*******************************************/
+nav {
+    background-color: white;
+    position: fixed;
+    top: 3.5em;
+    right: 0;
+    font-weight: 600;
+    letter-spacing: .1em;
+    width: 70vw;
+    height: 100vh;
+    font-size: .95em;
+    transform: translateX(100%);
+    display: none;
+    transition: .5s;
+}
+
+nav.toonMenu {
+    transform: translateX(0);
+    display: block;
+}
+
+/* styling lijst-hoofdmenu */
+nav ul li {
+    padding: 1.1em 1.5em 1.1em 1em;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+nav ul li a {
+    color: gray;
+}
+nav ul li a:hover {
+    cursor: default;
+}
+
+nav > ul > li:nth-of-type(2) a {
+    color: black;
+    cursor: pointer;
+}
+
+
+nav > ul > li:nth-of-type(2)::after {
+    content: "\f078";
+    font-family: FontAwesome;
+}
+
+nav > ul > li:nth-of-type(2) {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav > ul > li:nth-of-type(2):hover{
+    color: var(--oranjeButton);
+}
+
+/* styling submenus */
+nav ul ul {
+    display: none;
+    margin-top: 1.5em;
+}
+
+nav ul ul li {
+    padding: 1em 0;
+    font-size: .8em;
+}
+
+nav ul ul.submenu {
+    display: block;
+}
+
+nav > ul > li:nth-of-type(2).turnArrow a {
+    color: var(--oranjeButton);
+}
+
+nav > ul > li.turnArrow::after {
+    content: "\f078";
+    font-family: FontAwesome;
+    transform: rotate(180deg);
+    transition: .3s;
+    color: var(--oranjeButton);
+    position: absolute;
+    right: 1.5em;
+}
+
+/*******************************/
+/* LAYOUT VAN DE FEEDBACK FORM */
+/*******************************/
+
+form {
+    background-color: white;
+    position: fixed;
+    width: calc(100% - 20vw);
+    right: 0;
+    top: 7em;
+    text-align: center;
+    border-radius: .2em;
+    padding: 2em .5em 2em .5em;
+    height: 10em;
+    transform: translateX(100%);
+    transition: .3s;
+    z-index: 400;
+    max-width: 500px;
+}
+
+form.toonForm {
+    transform: translateX(-4vw);
+}
+
+form button:first-of-type.verwijderFeedbackButton {
+    opacity: 0;
+}
+
+form button:first-of-type {
+    position: absolute;
+    top: calc(50% - 1.2em);
+    right: calc(100% - 1.9em);
+    margin: 0;
+    padding: .5em;
+    width: 6em;
+    border-radius: .1em;
+    color: white;
+    text-align: center;
+    font-size: .8em;
+    background-color: var(--oranjeButtonOpacity);
+    text-transform: none;
+    letter-spacing: .05em;
+    font-weight: 300;
+    transform: rotate(-90deg);
+}
+
+form button:last-of-type {
+    position: absolute;
+    top: -.65em;
+    right: .8em;
+    margin: 0;
+    width: 1.2em;
+    height: auto;
+    border-radius: 1em;
+    color: white;
+    font-size: 1.5em;
+    background-color: var(--oranjeButton);
+    text-align: center;
+}
+
+form button:hover,
+form button:active {
+    background-color: var(--oranjeButtonHover);
+}
+
+form button:focus {
+    outline: 2px double var(--oranjeButton);
+}
+
+legend {
+    letter-spacing: .045em;
+    line-height: 1.4em;
+    margin-bottom: 1.2em;
+}
+
+form label {
+    padding: .25em;
+    cursor: pointer;
+}
+
+form img {
+    width: 30px;
+}
+
+/* hide the default radiobuttons*/
+input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* add animation for the emojis */
+@keyframes emoji-animatie {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5) rotate(1turn);
+    }
+}
+
+label img.groter {
+    animation-name: emoji-animatie;
+    animation-duration: .5s;
+}
+/************************/
+/* LAYOUT VAN DE FOOTER */
+/************************/
+footer {
+    width: 100%;
+    background-color: black;
+    padding: 6% 5% 3% 5%;
+    position: absolute;
+}
+
+footer ul li {
+    margin: 1.5em 0;
+}
+
+footer ul li {
+    color: white;
+    font-size: .75em;
+    font-weight: 550;
+}
+
+footer ul li a {
+    color: white;
+    text-transform: uppercase;
+}
+
+footer ul li a:active {
+    color: var(--oranjeButton);
+}
+footer ul li a:hover {
+    color: var(--oranjeButton);
+}
+
+footer ul li a:focus {
+    text-decoration: underline;
+}
+
+footer ul span {
+    color: red;
+}
+
+
+@media (min-width:400px) {
+    p {
+        font-size: 1.1em;
+    }
+
+    main section:first-of-type h1 {
+        font-size: 2.3em;
+        margin-right: 5%;
+    }
+
+    main section:first-of-type h2 {
+        font-size: 1.1em;
+        letter-spacing: .08em;
+    }
+
+    main section:first-of-type a {
+        top: 28em;
+    }
+
+    main section:nth-of-type(4) li p {
+        line-height: 1.5em;
+        font-size: .95em;
+    }
+
+}
