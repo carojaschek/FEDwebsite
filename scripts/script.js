@@ -43,10 +43,12 @@ emojiAnimatie.forEach(emoji => {
 /*Submenu openen*/
 var submenuOpenen = document.querySelector("nav > ul > li:nth-of-type(2)");
 var openNestedList = document.querySelector("nav ul ul");
-submenuOpenen.addEventListener("click", submenuVisible);
+submenuOpenen.addEventListener("click", submenuVisible, false);
 
-function submenuVisible() {
-    openNestedList.classList.toggle("submenu");
+/* niet ook de kinderen van de ul aanroepen */
+function submenuVisible(event) {
+    if (submenuOpenen !== event.target) return;
+        openNestedList.classList.toggle("submenu");
     submenuOpenen.classList.toggle("turnArrow");
 }
 

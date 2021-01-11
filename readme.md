@@ -12,6 +12,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 4. [Animated Counter](https://www.youtube.com/watch?v=a6XIMIKmj9k)
 5. Sanne ´t Hooft: Voorbeeld Carousel
 6. [Counter unordered list](https://css-tricks.com/custom-list-number-styling/)
+7. [Gradient Border](https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css)
 
 
 

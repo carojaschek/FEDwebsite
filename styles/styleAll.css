@@ -169,6 +169,7 @@ header nav {
     font-weight: 600;
     letter-spacing: .1em;
     width: 70vw;
+    max-width: 500px;
     height: 100vh;
     font-size: .95em;
     transform: translateX(100%);
@@ -205,13 +206,14 @@ header nav > ul > li:nth-of-type(2) a {
 header nav > ul > li:nth-of-type(2)::after {
     content: "\f078";
     font-family: FontAwesome;
+    position: absolute;
+    top: 1.2em;
+    right: 1em;
 }
 
 header nav > ul > li:nth-of-type(2) {
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    position: relative;
 }
 
 header nav > ul > li:nth-of-type(2):hover {
@@ -221,12 +223,12 @@ header nav > ul > li:nth-of-type(2):hover {
 /* styling submenus */
 header nav ul ul {
     display: none;
-    margin-top: 1.5em;
+    margin-top: .5em;
 }
 
 header nav ul ul li {
     padding: 1em 0;
-    font-size: .8em;
+    font-size: .65em;
 }
 
 header nav ul ul.submenu {
@@ -243,8 +245,7 @@ header nav > ul > li.turnArrow::after {
     transform: rotate(180deg);
     transition: .3s;
     color: var(--oranjeButton);
-    position: absolute;
-    right: 1.5em;
+
 }
 
 /*******************************/
@@ -265,6 +266,7 @@ form {
     transition: .3s;
     z-index: 400;
     max-width: 500px;
+    box-shadow: 4px 4px 10px grey;
 }
 
 form.toonForm {

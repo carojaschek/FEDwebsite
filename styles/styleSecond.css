@@ -178,13 +178,16 @@ main section:nth-of-type(5) li {
 
 main section:nth-of-type(5) li::before {
     content: counter(my-awesome-counter);
-    font-size: 2em;
-    font-weight: 900;
+    font-size: 1.8em;
+    font-weight: 800;
     color: var(--blue);
     padding: .005em .35em;
     margin-right: .3em;
     border: 4px solid;
-    border-radius: 50%;
+    /* Bron: https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
+    /* Zou wel graag een ronde cirkel hebben, maar gradients werken nog niet samen met border-radius */
+    border-image-source: linear-gradient(340deg, rgb(0, 0, 153), rgb(255,255,255));
+    border-image-slice: 1;
 
 }
 
