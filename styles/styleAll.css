@@ -8,27 +8,6 @@
     padding: 0;
     border: 0;
     font-family: 'Roboto', 'Arial', sans-serif;
-    scrollbar-color: transparent transparent;
-    /* thumb and track color */
-    scrollbar-width: 0px;
-}
-
-
-*::-webkit-scrollbar {
-    width: 0;
-}
-
-*::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
-}
-
-* {
-    -ms-overflow-style: none;
 }
 
 body {
@@ -113,9 +92,10 @@ header > a {
     border-radius: 0;
 }
 
-/**************************************/
-/* HAMBURGER MENU BUTTON MET ANIMATIE */
-/**************************************/
+/******************************************/
+/* HAMBURGER MENU BUTTON MET ANIMATIE     */
+/* Bron: Sanne ´t Hooft: Moving Hamburger */
+/******************************************/
 header button {
     background-color: white;
 }
@@ -181,7 +161,7 @@ header button span:last-of-type {
 /*******************************************/
 /* HAMBURGER MENU OPEN - OPMAAK VAN DE NAV */
 /*******************************************/
-nav {
+header nav {
     background-color: white;
     position: fixed;
     top: 3.5em;
@@ -202,61 +182,62 @@ nav.toonMenu {
 }
 
 /* styling lijst-hoofdmenu */
-nav ul li {
+header nav ul li {
     padding: 1.1em 1.5em 1.1em 1em;
     text-transform: uppercase;
     font-size: 1.3em;
 }
 
-nav ul li a {
+header nav ul li a {
     color: gray;
 }
-nav ul li a:hover {
+
+header nav ul li a:hover {
     cursor: default;
 }
 
-nav > ul > li:nth-of-type(2) a {
+header nav > ul > li:nth-of-type(2) a {
     color: black;
     cursor: pointer;
 }
 
 
-nav > ul > li:nth-of-type(2)::after {
+header nav > ul > li:nth-of-type(2)::after {
     content: "\f078";
     font-family: FontAwesome;
 }
 
-nav > ul > li:nth-of-type(2) {
+header nav > ul > li:nth-of-type(2) {
     cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-nav > ul > li:nth-of-type(2):hover{
+header nav > ul > li:nth-of-type(2):hover {
     color: var(--oranjeButton);
 }
 
 /* styling submenus */
-nav ul ul {
+header nav ul ul {
     display: none;
     margin-top: 1.5em;
 }
 
-nav ul ul li {
+header nav ul ul li {
     padding: 1em 0;
     font-size: .8em;
 }
 
-nav ul ul.submenu {
+header nav ul ul.submenu {
     display: block;
 }
 
-nav > ul > li:nth-of-type(2).turnArrow a {
+header nav > ul > li:nth-of-type(2).turnArrow a {
     color: var(--oranjeButton);
 }
 
-nav > ul > li.turnArrow::after {
+header nav > ul > li.turnArrow::after {
     content: "\f078";
     font-family: FontAwesome;
     transform: rotate(180deg);
@@ -346,6 +327,10 @@ form label {
     cursor: pointer;
 }
 
+form label:hover {
+
+}
+
 form img {
     width: 30px;
 }
@@ -374,6 +359,7 @@ label img.groter {
     animation-name: emoji-animatie;
     animation-duration: .5s;
 }
+
 /************************/
 /* LAYOUT VAN DE FOOTER */
 /************************/
@@ -402,6 +388,7 @@ footer ul li a {
 footer ul li a:active {
     color: var(--oranjeButton);
 }
+
 footer ul li a:hover {
     color: var(--oranjeButton);
 }

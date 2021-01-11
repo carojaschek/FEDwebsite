@@ -18,8 +18,7 @@
 <body>
     <header>
         <a href="index.html">Got Bag</a>
-
-        <button aria-label="open het menu">
+        <button aria-label="open the menu">
             <span></span><span></span><span></span>
         </button>
         <nav>
@@ -56,58 +55,43 @@
                 <button>Feedback</button>
                 <fieldset>
                     <legend>Wie hat Dir Dein Besuch heute bei GOT BAG gefallen?</legend>
-                    <input type="radio" name="data-feedback" value="GefälltMirGarNicht" id="GefälltMirGarNicht">
+                    <input type="radio" name="data-feedback" value="GefälltMirGarNicht">
                     <label for="GefälltMirGarNicht"><img src="images/sad.png" alt="sad emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="GefälltMirNicht" id="GefälltMirNicht">
+                    <input type="radio" name="data-feedback" value="GefälltMirNicht">
                     <label for="GefälltMirNicht"><img src="images/mediumsad.png" alt="medium sad emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="Neutral" id="Neutral">
+                    <input type="radio" name="data-feedback" value="Neutral">
                     <label for="Neutral"><img src="images/neutral.png" alt="neutral emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="GefälltMir" id="GefälltMir">
+                    <input type="radio" name="data-feedback" value="GefälltMir">
                     <label for="GefälltMir"><img src="images/mediumhappy.png" alt="medium happy emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="GefälltMirSehr" id="GefälltMirSehr">
+                    <input type="radio" name="data-feedback" value="GefälltMirSehr">
                     <label for=GefälltMirSehr><img src="images/happy.png" alt="happy emoji"></label>
                 </fieldset>
-                <button>&times;</button>
+                <button aria-label="close">&times;</button>
             </form>
         </section>
 
         <!--Tweede Section-->
-        <section aria-label="Gallery">
-            <h3>Bekannt aus</h3>
-            <ol class="viewport">
-                <li id="carousel__slide1" class="carousel__slide" tabindex="0">
-                    <a href="#carousel__slide3"></a>
-                    <a href="#carousel__slide2"></a>
-                    <img src="images/Logo-03.svg">
-                </li>
-                <li id="carousel__slide2" class="carousel__slide" tabindex="0">
-                    <a href="#carousel__slide1"></a>
-                    <a href="#carousel__slide3"></a>
-                    <img src="images/Logo-04.svg">
-                </li>
-                <li id="carousel__slide3" class="carousel__slide" tabindex="0">
-                    <a href="#carousel__slide2"></a>
-                    <a href="#carousel__slide1"></a>
-                    <img src="images/Logo-06.svg">
-                </li>
-                <!--Tabindex: niet met toetsenborad bereikbaar (alleen de a´s)-->
-            </ol>
-            <aside>
-                <ol>
-                    <li>
-                        <a href="#carousel__slide1"></a>
-                    </li>
-                    <li>
-                        <a href="#carousel__slide2"></a>
-                    </li>
-                    <li>
-                        <a href="#carousel__slide3"></a>
-                </ol>
-            </aside>
+        <section id="bolletjesAndAutoScroll" class="caroCarrousel" aria-label="Carousel met auto-scroll" tabIndex="-1">
+            <ul>
+                <li id="element1"><img src="./images/Logo-03.svg" alt="logo indojunkie" /></li>
+                <!-- Bron: https://eu.got-bag.com/-->
+                <li id="element2"><img src="./images/Logo-04.svg" alt="logo vice digital" /></li>
+                <!-- Bron: https://eu.got-bag.com/-->
+                <li id="element3"><img src="./images/Logo-06.svg" alt="logo explore magazine" /></li>
+                <!-- Bron: https://eu.got-bag.com/-->
+            </ul>
+
+            <nav>
+                <ul>
+                    <li><a href="#element1" aria-label="go to element1"></a></li>
+                    <li><a href="#element2" aria-label="go to element2"></a></li>
+                    <li><a href="#element3" aria-label="go to element3"></a></li>
+                </ul>
+            </nav>
         </section>
 
         <!--Derde Section-->
@@ -163,4 +147,6 @@
     </footer>
 
     <script src="scripts/script.js"></script>
-</body></html>
+</body>
+
+</html>
