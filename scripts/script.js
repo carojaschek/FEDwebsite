@@ -32,12 +32,14 @@ var emojiAnimatie = document.querySelectorAll("form img");
 
 emojiAnimatie.forEach(emoji => {
     emoji.addEventListener("click", (event) => {
+        const selectedEmoji = document.querySelector(".groter");
+        if (selectedEmoji) {
+            selectedEmoji.classList.remove("groter");
+        }
         emoji.classList.toggle("groter");
-        event.target.style.border = '2px solid black'
-        event.target.style.borderRadius = '50%';
-    })
-});
+    });
 
+    });
 
 /****************/
 /*Submenu openen*/
@@ -48,7 +50,7 @@ submenuOpenen.addEventListener("click", submenuVisible, false);
 /* niet ook de kinderen van de ul aanroepen */
 function submenuVisible(event) {
     if (submenuOpenen !== event.target) return;
-        openNestedList.classList.toggle("submenu");
+    openNestedList.classList.toggle("submenu");
     submenuOpenen.classList.toggle("turnArrow");
 }
 
@@ -59,7 +61,8 @@ var counters = document.querySelectorAll(".counter");
 /* hoe lager de nummer hoe sneller gaat ie optellen*/
 var speed = 300;
 /* alle elementen uit nodelist selecteren*/
-counters.forEach(counter => {
+
+function counting (counter) {
     var updateCount = () => {
         /* nummer ophalen die in data-target (in de html) staat (is voor elke div anders), zonder het plusje zouden we strings krijgen - plus maakt van strings nummers*/
         var target = +counter.getAttribute("data-target");
@@ -74,29 +77,52 @@ counters.forEach(counter => {
             /* het optellen stoppen als de data-target waarde is bereikt*/
             count.innerText = target;
         }
+    };
+    updateCount();
+}
+
+let observerGenericCounters;
+let observerConfigGenericCounters = {
+    threshold: .5
+};
+
+observerGenericCounters = new IntersectionObserver(observerFnGenericCounters, observerConfigGenericCounters);
+
+for (counter of counters) {
+    observerGenericCounters.observe(counter);
+}
+
+function observerFnGenericCounters (counters){
+    for (counter of counters) {
+        /* als een element minstens voor de helft in beeld is */
+        if(counter.isIntersecting) {
+            counting(counter.target);
+        }
     }
-     updateCount();
-})
+}
+
+
+
 
 /********************************************************/
 /* DE CAROUSEL Bron: Sanne ´t Hooft: Voorbeeld Carousel */
 function createCaroCarrousel(carrouselID) {
-    let carrousel = document.querySelector("#"+carrouselID);
-  let carrouselElementsContainer = carrousel.querySelector(":scope > ul");
+    let carrousel = document.querySelector("#" + carrouselID);
+    let carrouselElementsContainer = carrousel.querySelector(":scope > ul");
     let carrouselElements = carrouselElementsContainer.querySelectorAll("li");
-  let bolletjes = carrousel.querySelectorAll(":scope > nav a");
-  let linkButtons = carrousel.querySelectorAll(":scope > a");
+    let bolletjes = carrousel.querySelectorAll(":scope > nav a");
+    let linkButtons = carrousel.querySelectorAll(":scope > a");
 
-  let autoScrollInterval = 4000;
-  let autoScrollTimer;
+    let autoScrollInterval = 4000;
+    let autoScrollTimer;
 
     /****************/
     /* DE BOLLETJES */
-  // bolletjes activeren
-  function iniBolletjes() {
-    for (bolletje of bolletjes) {
+    // bolletjes activeren
+    function iniBolletjes() {
+        for (bolletje of bolletjes) {
             // elk bolletje laten luisteren naar kliks
-      bolletje.addEventListener("click", function(e){
+            bolletje.addEventListener("click", function (e) {
                 // als er geklikt wordt
 
                 // de default-actie (de link volgen) niet uitvoeren
@@ -104,61 +130,61 @@ function createCaroCarrousel(carrouselID) {
 
                 // de id van het bijbehorende element bepalen
                 let newElementID = this.hash.substring(1); // de # eraf halen
-        // dan naar het element met ID scrollen
-        scrollToElement(newElementID);
+                // dan naar het element met ID scrollen
+                scrollToElement(newElementID);
 
-        // auto-scroll stoppen als de gebruiker interactie heeft met de carrousel
-              stopAutoScroll();
-      });
-    }
+                // auto-scroll stoppen als de gebruiker interactie heeft met de carrousel
+                stopAutoScroll();
+            });
+        }
     }
 
     /*****************/
     /* AUTO SCROLLEN */
     // auto scroll starten
     function startAutoScroll() {
-    // de class "autoScrolling" toevoegen aan de carrousel
-    carrousel.classList.add("autoScrolling");
+        // de class "autoScrolling" toevoegen aan de carrousel
+        carrousel.classList.add("autoScrolling");
 
-    // een timer aanzetten
-    autoScrollTimer = setInterval(function(){
-    // als de timer afgaat naar het volgende element gaan
-      goToElement("next");
-    }, autoScrollInterval);
+        // een timer aanzetten
+        autoScrollTimer = setInterval(function () {
+            // als de timer afgaat naar het volgende element gaan
+            goToElement("next");
+        }, autoScrollInterval);
 
-  }
+    }
 
     // auto scroll stoppen
-  function stopAutoScroll() {
-    // de class "autoScrolling" verwijderen van de carrousel
-    carrousel.classList.remove("autoScrolling");
-    // de timer stopzetten
-    clearInterval(autoScrollTimer);
-  }
+    function stopAutoScroll() {
+        // de class "autoScrolling" verwijderen van de carrousel
+        carrousel.classList.remove("autoScrolling");
+        // de timer stopzetten
+        clearInterval(autoScrollTimer);
+    }
 
     // auto scroll initieren en activeren
-  function iniAutoScroll() {
-    // auto scroll initieel starten
+    function iniAutoScroll() {
+        // auto scroll initieel starten
         startAutoScroll();
     }
 
     /*****************/
     /* START POSITIE */
     // het eerste element en bolletje actief maaken
-  function iniStartPosition() {
-    // eerste element current maken
-    carrouselElements[0].classList.add("current");
-    // eerste bolletje current maken
+    function iniStartPosition() {
+        // eerste element current maken
+        carrouselElements[0].classList.add("current");
+        // eerste bolletje current maken
         bolletjes[0].classList.add("current");
         // aan het begin van de container starten
-    carrouselElementsContainer.scrollLeft = 0;
-  }
+        carrouselElementsContainer.scrollLeft = 0;
+    }
 
     /*********************/
     /* ALGEMENE FUNCTIES */
-  //////////////////////////////////
-  // naar volgende/vorige element //
-  function goToElement(direction) {
+    //////////////////////////////////
+    // naar volgende/vorige element //
+    function goToElement(direction) {
         // het huidige current element opzoeken
         let currentElement = carrousel.querySelector(":scope > ul > .current");
 
@@ -181,26 +207,26 @@ function createCaroCarrousel(carrouselID) {
 
         // naar het nieuwe element scrollen
         scrollToElement(newElement.id);
-  }
+    }
 
 
-  ///////////////////////////
-  // scroll to new element //
-  function scrollToElement(elementID) {
-    // nieuwe element current element maken
-    updateCurrentElement(elementID);
+    ///////////////////////////
+    // scroll to new element //
+    function scrollToElement(elementID) {
+        // nieuwe element current element maken
+        updateCurrentElement(elementID);
 
-    // scrollLeft van de container aanpassen
-    let theElement = carrousel.querySelector("#"+elementID);
-    let elementOffset = theElement.offsetLeft;
-    carrouselElementsContainer.scrollLeft = elementOffset;
+        // scrollLeft van de container aanpassen
+        let theElement = carrousel.querySelector("#" + elementID);
+        let elementOffset = theElement.offsetLeft;
+        carrouselElementsContainer.scrollLeft = elementOffset;
 
-    // de bolletjes updaten
-    updateBolletjes(elementID);
-  }
+        // de bolletjes updaten
+        updateBolletjes(elementID);
+    }
 
 
-  ////////////////////////////
+    ////////////////////////////
     // update current element //
     function updateCurrentElement(elementID) {
         // het huidige current element opzoeken
@@ -209,41 +235,40 @@ function createCaroCarrousel(carrouselID) {
         currentElement.classList.remove("current");
 
         // het nieuwe element opzoeken
-        let newElement = carrousel.querySelector("#"+elementID);
+        let newElement = carrousel.querySelector("#" + elementID);
         // de class current toevoegen
         newElement.classList.add("current");
     }
 
 
-  //////////////////////
-  // update bolletjes //
-  function updateBolletjes(elementID){
+    //////////////////////
+    // update bolletjes //
+    function updateBolletjes(elementID) {
         // het huidige current bolletje opzoeken
         let currentBolletje = carrousel.querySelector(":scope > nav .current");
         // de class current verwijderen
         currentBolletje.classList.remove("current");
 
         // het nieuwe bolletje opzoeken
-    let newBolletje = carrousel.querySelector("a[href='#"+elementID+"']");
+        let newBolletje = carrousel.querySelector("a[href='#" + elementID + "']");
         // de class current toevoegen
         newBolletje.classList.add("current");
-  }
+    }
 
 
     // de bolletjes activeren
-  iniBolletjes();
-  // de carrousel bij het begin starten
-  iniStartPosition();
-  // auto scroll activeren
-  iniAutoScroll();
+    iniBolletjes();
+    // de carrousel bij het begin starten
+    iniStartPosition();
+    // auto scroll activeren
+    iniAutoScroll();
 }
 
 
 /************************/
 /* DE CARROUSEL CREËREN */
 // nadat de pagina geladen is, de carrousels activeren
-(function() {
-  // hier de id gebruiken van de section in de html
-  createCaroCarrousel("bolletjesAndAutoScroll");
+(function () {
+    // hier de id gebruiken van de section in de html
+    createCaroCarrousel("bolletjesAndAutoScroll");
 })();
-

@@ -184,7 +184,7 @@ nav.toonMenu {
 
 /* styling lijst-hoofdmenu */
 header nav ul li {
-    padding: 1.1em 1.5em 1.1em 1em;
+    padding: 1em 1.5em 1em 1em;
     text-transform: uppercase;
     font-size: 1.3em;
 }
@@ -199,9 +199,11 @@ header nav ul li a:hover {
 
 header nav > ul > li:nth-of-type(2) a {
     color: black;
-    cursor: pointer;
 }
 
+header nav > ul > li:nth-of-type(2) a:hover {
+    color: var(--oranjeButton);
+}
 
 header nav > ul > li:nth-of-type(2)::after {
     content: "\f078";
@@ -214,10 +216,6 @@ header nav > ul > li:nth-of-type(2)::after {
 header nav > ul > li:nth-of-type(2) {
     cursor: pointer;
     position: relative;
-}
-
-header nav > ul > li:nth-of-type(2):hover {
-    color: var(--oranjeButton);
 }
 
 /* styling submenus */
@@ -236,16 +234,19 @@ header nav ul ul.submenu {
 }
 
 header nav > ul > li:nth-of-type(2).turnArrow a {
+    color: black;
+}
+
+header nav > ul > li:nth-of-type(2).turnArrow a:hover {
     color: var(--oranjeButton);
 }
+
 
 header nav > ul > li.turnArrow::after {
     content: "\f078";
     font-family: FontAwesome;
     transform: rotate(180deg);
     transition: .3s;
-    color: var(--oranjeButton);
-
 }
 
 /*******************************/
@@ -360,7 +361,11 @@ input {
 label img.groter {
     animation-name: emoji-animatie;
     animation-duration: .5s;
+    border: 3px dotted var(--oranjeButton);
+    border-radius: 50%;
+
 }
+
 
 /************************/
 /* LAYOUT VAN DE FOOTER */

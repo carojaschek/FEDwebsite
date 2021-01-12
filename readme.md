@@ -13,6 +13,8 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 5. Sanne ´t Hooft: Voorbeeld Carousel
 6. [Counter unordered list](https://css-tricks.com/custom-list-number-styling/)
 7. [Gradient Border](https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css)
+8. [Animate number in JS](https://codepen.io/chriscoyier/pen/xxVBqEg)
+9. Groot dank aan Marvin voor heel veel handige tips!!!
 
 
 
@@ -47,7 +49,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 | naar boven     |                    |              |                  |
 
 ### Verslag van meeting
--Komt later-
+-Het was een goed en kort gesprek. We hebben een menu voor Julia gefixed en een achtergrond plaatje van Anne-Fleur. Het was interessant om te zien wat de andere studenten doen. Voor mij persoonlijk konden wij het probleem met het horizontaal scrollen oplossen dat steeds weer terug kwam. Dit lag uiteindelijk aan de width-waarde, die in de eenheid "%" moest staan en niet in "vw" of "px".  -
 
 
 ## Toegankelijkheid
