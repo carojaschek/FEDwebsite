@@ -76,8 +76,8 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 ### Agenda voor meeting
 
 | Caro           | AnneFleur          | Hind         | Enis             | Julia
-| ---            | ---                | Navigatie    | ---              | Navigatie
-| position van   |                    |              |                  |
+| ---            | ---                | ---          | ---              | ---
+| position van   |                    | Navigatie    |                  | Navigatie
 | de nav en      |                    |              |                  |
 | uitklappen sub |                    |              |                  |
 | menu, tips     |                    |              |                  |
