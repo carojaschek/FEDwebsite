@@ -14,17 +14,21 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 6. [Counter unordered list](https://css-tricks.com/custom-list-number-styling/)
 7. [Gradient Border](https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css)
 8. [Animate number in JS](https://codepen.io/chriscoyier/pen/xxVBqEg)
-9. Groot dank aan Marvin voor heel veel handige tips!!!
-
 
 
 ## Eindgesprek (week 7/8)
 
--dit ging goed & dit was lastig-
+-In het begin had ik veel respect voor dit vak. Het leek me ingewikkeld en moeilijk vooral omdat ik een tijdje niet meer bezig was met JS/HTML en CSS. De oefeningen tijdens de lessen waren erg behulpzaam en goed om weer even in te komen. Vooral dat je zelf kon bepalen hoe ver je wilt gaan binnen een oefening was fijn. De oefeningen sluiten ook goed aan bij de onderdelen, die ik zelf nodig had voor mijn site. Uiteindelijk ging ik stap voor stap de site programmeren en dingen uitproberen. Ik kwam erachter dat er heel veel dingen mogelijk zijn zonder dat er erg ingewikkelde code voor nodig is. Er waren niet heel veel dingen waarmee ik vastliep maar als dat gebeurde was de hulp altijd dichtbij (dank aan Marvin, Merel en Sanne!). Ik had zelf (meestendeels) veel plezier bij het maken van de site. Misschien had ik toch voor Front-End moeten kiezen in blok 4...-
 
 **Screenshot(s):**
-
--screenshot(s) van je eindresultaat-
+<img src="images/final1.PNG" width="150px" alt="final1">
+<img src="images/final2.PNG" width="150px" alt="final2">
+<img src="images/final3.PNG" width="150px" alt="final3">
+<img src="images/final4.PNG" width="150px" alt="final4">
+<img src="images/final5.PNG" width="150px" alt="final5">
+<img src="images/final6.PNG" width="150px" alt="final6">
+<img src="images/final7.PNG" width="150px" alt="final7">
+<img src="images/final8.PNG" width="150px" alt="final8">
 
 
 

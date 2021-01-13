@@ -30,16 +30,17 @@ function menuAnimatie() {
 /* klikken op de emojis in de feedback form */
 var emojiAnimatie = document.querySelectorAll("form img");
 
+/* forEach loop: voor elk element in de array (elk img) */
 emojiAnimatie.forEach(emoji => {
     emoji.addEventListener("click", (event) => {
         const selectedEmoji = document.querySelector(".groter");
+        /* als selectedEmoji=true wordt de class weggehaald anders wordt ze toegevoegd. Zou je dat niet doen, zou je alle emojis kunnen selecteren */
         if (selectedEmoji) {
             selectedEmoji.classList.remove("groter");
         }
         emoji.classList.toggle("groter");
     });
-
-    });
+});
 
 /****************/
 /*Submenu openen*/
@@ -62,7 +63,7 @@ var counters = document.querySelectorAll(".counter");
 var speed = 300;
 /* alle elementen uit nodelist selecteren*/
 
-function counting (counter) {
+function counting(counter) {
     var updateCount = () => {
         /* nummer ophalen die in data-target (in de html) staat (is voor elke div anders), zonder het plusje zouden we strings krijgen - plus maakt van strings nummers*/
         var target = +counter.getAttribute("data-target");
@@ -81,6 +82,8 @@ function counting (counter) {
     updateCount();
 }
 
+/*******************************************************************************************/
+/* Intersection Observer waardoor de animated numbers pas afgaan als ze half in beeld zijn */
 let observerGenericCounters;
 let observerConfigGenericCounters = {
     threshold: .5
@@ -92,17 +95,14 @@ for (counter of counters) {
     observerGenericCounters.observe(counter);
 }
 
-function observerFnGenericCounters (counters){
+function observerFnGenericCounters(counters) {
     for (counter of counters) {
         /* als een element minstens voor de helft in beeld is */
-        if(counter.isIntersecting) {
+        if (counter.isIntersecting) {
             counting(counter.target);
         }
     }
 }
-
-
-
 
 /********************************************************/
 /* DE CAROUSEL Bron: Sanne ´t Hooft: Voorbeeld Carousel */
@@ -112,29 +112,23 @@ function createCaroCarrousel(carrouselID) {
     let carrouselElements = carrouselElementsContainer.querySelectorAll("li");
     let bolletjes = carrousel.querySelectorAll(":scope > nav a");
     let linkButtons = carrousel.querySelectorAll(":scope > a");
-
     let autoScrollInterval = 4000;
     let autoScrollTimer;
 
     /****************/
     /* DE BOLLETJES */
-    // bolletjes activeren
+    /* bolletjes activeren */
     function iniBolletjes() {
         for (bolletje of bolletjes) {
-            // elk bolletje laten luisteren naar kliks
+            /* elk bolletje laten luisteren naar kliks */
             bolletje.addEventListener("click", function (e) {
-                // als er geklikt wordt
-
-                // de default-actie (de link volgen) niet uitvoeren
+            /* de default-actie (de link volgen) niet uitvoeren */
                 e.preventDefault();
 
                 // de id van het bijbehorende element bepalen
                 let newElementID = this.hash.substring(1); // de # eraf halen
                 // dan naar het element met ID scrollen
                 scrollToElement(newElementID);
-
-                // auto-scroll stoppen als de gebruiker interactie heeft met de carrousel
-                stopAutoScroll();
             });
         }
     }
@@ -152,14 +146,6 @@ function createCaroCarrousel(carrouselID) {
             goToElement("next");
         }, autoScrollInterval);
 
-    }
-
-    // auto scroll stoppen
-    function stopAutoScroll() {
-        // de class "autoScrolling" verwijderen van de carrousel
-        carrousel.classList.remove("autoScrolling");
-        // de timer stopzetten
-        clearInterval(autoScrollTimer);
     }
 
     // auto scroll initieren en activeren
@@ -269,6 +255,9 @@ function createCaroCarrousel(carrouselID) {
 /* DE CARROUSEL CREËREN */
 // nadat de pagina geladen is, de carrousels activeren
 (function () {
-    // hier de id gebruiken van de section in de html
-    createCaroCarrousel("bolletjesAndAutoScroll");
+
+    if (document.querySelector("#bolletjesAndAutoScroll")) {
+        // hier de id gebruiken van de section in de html
+        createCaroCarrousel("bolletjesAndAutoScroll");
+    }
 })();

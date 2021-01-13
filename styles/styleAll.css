@@ -1,4 +1,10 @@
+/****************************************/
 /* CSS Document voor de algemene dingen */
+
+
+/***********************/
+/* Wat algemene dingen */
+/***********************/
 *,
 *::after,
 *::before {
@@ -10,6 +16,7 @@
     font-family: 'Roboto', 'Arial', sans-serif;
 }
 
+/* variabelen aanmaken voor de kleuren */
 body {
     --oranjeButton: rgb(235, 89, 67);
     --oranjeButtonHover: rgb(255, 130, 95);
@@ -59,43 +66,42 @@ em {
     font-style: normal;
 }
 
-/************************/
-/* LAYOUT VAN DE HEADER */
-/************************/
+/***********************************************/
+/* LAYOUT VAN DE HEADER (logo, hamburger menu) */
+/***********************************************/
 
 header {
-    background-color: white;
     position: sticky;
     top: 0;
     left: 0;
     height: 3.3em;
     width: 100%;
+    padding: 0 .8em 0 .8em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 .8em 0 .8em;
+    background-color: white;
     box-shadow: 0px 2px 2px grey;
     z-index: 600;
 }
 
 header > a {
-    font-size: .9em;
-    display: grid;
-    text-align: left;
-    grid-auto-columns: min-content;
-    line-height: .9em;
-    border-left: 2px solid black;
     padding: .8em 0 0 .1em;
+    display: grid;
+    grid-auto-columns: min-content;
+    font-size: .9em;
+    text-align: left;
+    line-height: .9em;
     text-transform: uppercase;
     font-weight: 600;
+    border-left: 2px solid black;
     border-radius: 0;
 }
 
 /******************************************/
-/* HAMBURGER MENU BUTTON MET ANIMATIE     */
+/* HAMBURGER MENU EN BUTTON MET ANIMATIE  */
 /* Bron: Sanne ´t Hooft: Moving Hamburger */
-/******************************************/
 header button {
     background-color: white;
 }
@@ -105,81 +111,74 @@ header > button {
     position: relative;
     width: 2em;
     height: 2em;
-    appearance: none;
-    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    appearance: none;
+    border: none;
 }
 
-/* de streepjes */
+/* het broodje en het vlees van de hamburger, die kunnen bewegen */
 header button span {
-    /* hiermee worden de span uit de normale flow gehaald */
-    /* in combinatie met flex van de button staan ze dan over elkaar heen */
     position: absolute;
-    /* maten en een kleurtje */
     width: 1.9em;
     height: 2px;
     background-color: black;
-    /* zodat de beweging op de terugweg .5 seconde duurt */
     transition: .5s
 }
 
+/* draai het bovenste broodje */
 header button span:first-of-type {
     transform: translatey(-8px);
 }
 
+/* draai het onderste broodje */
 header button span:last-of-type {
     transform: translatey(8px);
 }
 
 /* class toevoegen voor de animatie in JS */
 .menuOpen button span {
-    /* zodat de beweging op de heenweg .5 seconde duurt */
-    /* met ease-out begint de beweging snel en eindigt langzaam */
     transition: .5s ease-out;
 }
 
 .menuOpen button span:first-of-type {
-    /* eerste streepje gaat terug naar het midden */
-    /* en draait ondertussen 230 graden */
     transform: translatey(0) rotate(225deg);
     width: 1.7em;
 }
 
+/* laat het vlees onzichtbaar worden */
 .menuOpen button span:nth-of-type(2) {
     opacity: 0;
 }
 
 .menuOpen button span:last-of-type {
-    /* het laatste streepje gaat terug naar het midden */
-    /* en draait ondertussen -230 graden */
     transform: translatey(0) rotate(-225deg);
     width: 1.7em;
 }
 
 /*******************************************/
 /* HAMBURGER MENU OPEN - OPMAAK VAN DE NAV */
-/*******************************************/
 header nav {
-    background-color: white;
     position: fixed;
     top: 3.5em;
     right: 0;
-    font-weight: 600;
-    letter-spacing: .1em;
     width: 70vw;
     max-width: 500px;
     height: 100vh;
+    display: none;
+    background-color: white;
+    font-weight: 600;
+    letter-spacing: .1em;
     font-size: .95em;
     transform: translateX(100%);
-    display: none;
     transition: .5s;
 }
 
+/* class die wordt toegevoegd in de JS, maakt het menu zichtbaar*/
 nav.toonMenu {
-    transform: translateX(0);
     display: block;
+    transform: translateX(0);
 }
 
 /* styling lijst-hoofdmenu */
@@ -189,6 +188,7 @@ header nav ul li {
     font-size: 1.3em;
 }
 
+/* alleen een menu item is uitgewerkt - daarom de rest grijs en cursor default */
 header nav ul li a {
     color: gray;
 }
@@ -197,20 +197,9 @@ header nav ul li a:hover {
     cursor: default;
 }
 
+/* alleen het menu item "mission", dat wel is uitgewerkt, is zwart... */
 header nav > ul > li:nth-of-type(2) a {
     color: black;
-}
-
-header nav > ul > li:nth-of-type(2) a:hover {
-    color: var(--oranjeButton);
-}
-
-header nav > ul > li:nth-of-type(2)::after {
-    content: "\f078";
-    font-family: FontAwesome;
-    position: absolute;
-    top: 1.2em;
-    right: 1em;
 }
 
 header nav > ul > li:nth-of-type(2) {
@@ -218,7 +207,35 @@ header nav > ul > li:nth-of-type(2) {
     position: relative;
 }
 
-/* styling submenus */
+/* ... en wordt oranje als je hovert... */
+header nav > ul > li:nth-of-type(2) a:hover, header nav > ul > li:nth-of-type(2) a:active {
+    color: var(--oranjeButton);
+}
+
+/* ... en krijgt een border als je focust */
+header nav > ul > li:nth-of-type(2) a:focus {
+    border: 2px solid var(--oranjeButton);
+}
+
+/* het pijlte, dat aangeeft dat het menu uitvouwbaar is */
+header nav > ul > li:nth-of-type(2)::after {
+    position: absolute;
+    top: 1.2em;
+    right: 1em;
+    content: "\f078";
+    font-family: FontAwesome;
+}
+
+/* het pijlte draait als het menu open staat */
+header nav > ul > li.turnArrow::after {
+    content: "\f078";
+    font-family: FontAwesome;
+    transform: rotate(180deg);
+    transition: .3s;
+}
+
+/*******************/
+/* styling submenu */
 header nav ul ul {
     display: none;
     margin-top: .5em;
@@ -229,125 +246,112 @@ header nav ul ul li {
     font-size: .65em;
 }
 
+/* class die wordt toegevoegd in JS om het submenu zichtbaar te maken */
 header nav ul ul.submenu {
     display: block;
 }
 
-header nav > ul > li:nth-of-type(2).turnArrow a {
-    color: black;
-}
-
-header nav > ul > li:nth-of-type(2).turnArrow a:hover {
-    color: var(--oranjeButton);
-}
-
-
-header nav > ul > li.turnArrow::after {
-    content: "\f078";
-    font-family: FontAwesome;
-    transform: rotate(180deg);
-    transition: .3s;
-}
-
-/*******************************/
-/* LAYOUT VAN DE FEEDBACK FORM */
-/*******************************/
+/********************/
+/* DE FEEDBACK FORM */
+/********************/
 
 form {
-    background-color: white;
     position: fixed;
-    width: calc(100% - 20vw);
     right: 0;
     top: 7em;
+    height: 10em;
+    width: calc(100% - 20vw);
+    max-width: 500px;
+    padding: 2em .5em 2em .5em;
+    background-color: white;
+    box-shadow: 4px 4px 10px grey;
     text-align: center;
     border-radius: .2em;
-    padding: 2em .5em 2em .5em;
-    height: 10em;
     transform: translateX(100%);
     transition: .3s;
     z-index: 400;
-    max-width: 500px;
-    box-shadow: 4px 4px 10px grey;
 }
 
+/* class die wordt toegevoegd in JS om de form zichtbaar te maken */
 form.toonForm {
     transform: translateX(-4vw);
 }
 
-form button:first-of-type.verwijderFeedbackButton {
-    opacity: 0;
-}
-
+/* de feedback button aan de rechte kant */
 form button:first-of-type {
     position: absolute;
     top: calc(50% - 1.2em);
     right: calc(100% - 1.9em);
+    width: 6em;
     margin: 0;
     padding: .5em;
-    width: 6em;
-    border-radius: .1em;
     color: white;
+    background-color: var(--oranjeButtonOpacity);
     text-align: center;
     font-size: .8em;
-    background-color: var(--oranjeButtonOpacity);
     text-transform: none;
     letter-spacing: .05em;
     font-weight: 300;
+    border-radius: .1em;
     transform: rotate(-90deg);
 }
 
+/* verwijder de feedback-button als de feedback form open staat */
+form button:first-of-type.verwijderFeedbackButton {
+    opacity: 0;
+}
+
+/* de "sluit-feedback-form-button" */
 form button:last-of-type {
     position: absolute;
     top: -.65em;
     right: .8em;
-    margin: 0;
     width: 1.2em;
     height: auto;
-    border-radius: 1em;
+    margin: 0;
     color: white;
-    font-size: 1.5em;
     background-color: var(--oranjeButton);
+    font-size: 1.5em;
     text-align: center;
+    border-radius: 1em;
 }
 
+/* de buttons worden wat lichter als je hovert... */
 form button:hover,
 form button:active {
     background-color: var(--oranjeButtonHover);
 }
 
+/* ... en een lijn omheen als je focust */
 form button:focus {
     outline: 2px double var(--oranjeButton);
 }
 
+/* style van de vraag in de feedback-form */
 legend {
     letter-spacing: .045em;
     line-height: 1.4em;
     margin-bottom: 1.2em;
 }
 
+/* style van de emojis in de feedback-form */
 form label {
     padding: .25em;
     cursor: pointer;
-}
-
-form label:hover {
-
 }
 
 form img {
     width: 30px;
 }
 
-/* hide the default radiobuttons*/
+/* de default radiobuttons verstoppen */
 input {
-    position: absolute;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
 }
 
-/* add animation for the emojis */
+/* animatie als je op een van de emojis klikt (wordt groter en draait) */
 @keyframes emoji-animatie {
     0% {
         transform: scale(1);
@@ -358,6 +362,7 @@ input {
     }
 }
 
+/* class die wordt toegevoegd in de JS */
 label img.groter {
     animation-name: emoji-animatie;
     animation-duration: .5s;
@@ -371,10 +376,10 @@ label img.groter {
 /* LAYOUT VAN DE FOOTER */
 /************************/
 footer {
-    width: 100%;
-    background-color: black;
-    padding: 6% 5% 3% 5%;
     position: absolute;
+    width: 100%;
+    padding: 6% 5% 3% 5%;
+    background-color: black;
 }
 
 footer ul li {
@@ -384,7 +389,7 @@ footer ul li {
 footer ul li {
     color: white;
     font-size: .75em;
-    font-weight: 550;
+    font-weight: 500;
 }
 
 footer ul li a {
@@ -392,11 +397,7 @@ footer ul li a {
     text-transform: uppercase;
 }
 
-footer ul li a:active {
-    color: var(--oranjeButton);
-}
-
-footer ul li a:hover {
+footer ul li a:active, footer ul li a:hover {
     color: var(--oranjeButton);
 }
 
@@ -404,11 +405,13 @@ footer ul li a:focus {
     text-decoration: underline;
 }
 
+/* span voor het hartje */
 footer ul span {
     color: red;
 }
 
 
+/* wat kleine dingetjes om het op verschillende schermgroottes leesbarer te maken */
 @media (min-width:400px) {
     p {
         font-size: 1.1em;

@@ -18,8 +18,8 @@
 <body>
     <header>
         <a href="../index.html">Got Bag</a>
-
         <button aria-label="open het menu">
+           <!-- span voor het hamburger icon -->
             <span></span><span></span><span></span>
         </button>
         <nav>
@@ -44,28 +44,23 @@
         <!--Eerste Section-->
         <section>
             <h1>Erfahre mehr über unsere <em>Mission</em></h1>
-
-            <div></div>
-            <div></div>
-            <div></div>
-
             <form>
                 <button>Feedback</button>
                 <fieldset>
                     <legend>Wie hat Dir Dein Besuch heute bei GOT BAG gefallen?</legend>
-                    <input type="radio" name="data-feedback" value="GefälltMirGarNicht">
+                    <input type="radio" name="data-feedback" value="GefälltMirGarNicht" id="GefälltMirGarNicht">
                     <label for="GefälltMirGarNicht"><img src="../images/sad.png" alt="sad emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="GefälltMirNicht">
+                    <input type="radio" name="data-feedback" value="GefälltMirNicht" id="GefälltMirNicht">
                     <label for="GefälltMirNicht"><img src="../images/mediumsad.png" alt="medium sad emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="Neutral">
+                    <input type="radio" name="data-feedback" value="Neutral" id="Neutral">
                     <label for="Neutral"><img src="../images/neutral.png" alt="neutral emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="GefälltMir">
+                    <input type="radio" name="data-feedback" value="GefälltMir" id="GefälltMir">
                     <label for="GefälltMir"><img src="../images/mediumhappy.png" alt="medium happy emoji"></label>
 
-                    <input type="radio" name="data-feedback" value="GefälltMirSehr">
+                    <input type="radio" name="data-feedback" value="GefälltMirSehr" id="GefälltMirSehr">
                     <label for=GefälltMirSehr><img src="../images/happy.png" alt="happy emoji"></label>
                 </fieldset>
                 <button aria-label="close">&times;</button>
@@ -74,13 +69,14 @@
 
         <!--Tweede Section-->
         <section>
+          <!-- Deze section heeft geen heading. Dit geeft een warning in de validator, maar ik wist niet zo goed hoe ik het anders moet doen -->
             <p>Als Mainzer Start-Up liegt das Meer zwar in der Ferne, aber unser Kollege Max leitet an der Nordküste Javas in Indonesien, unsere Reinigungsaktivitäten, um Stück für Stück das Meer von Plastik zu befreien.</p>
             <p>Ein Netzwerk aus 1500 Fischern, die das Plastik, das sich in ihren Netzen verfängt, bergen, sorgfältig trennen und reinigen. Für jeden GOT BAG werden bis zu 4 Kg Plastik geborgen. Der PET-Anteil fließt in unsere Produktionskette. Alle verliebenen Reste recyceln wir entsprechend. Schritt für Schritt entsteht vom Rohmaterial Meeresplastik, ein hochwertiges Garn. Bis zum fertigen Produkt wird eine ressourcenschonende Wertschöpfungskette durchlaufen. Jeder Arbeitsschritt folgt den höchsten Anforderungen an fairen und sozialen Bedingungen mit Arbeitsplatzsicherheit und Zertifizierungen.</p>
         </section>
 
         <!--Derde Section-->
         <section id="clean-up">
-            <h2>Clean-Up Indonesien</h2>
+            <h3>Clean-Up Indonesien</h3>
             <img src="../images/missionIndonesia.jpg" alt="Foto of people working with garbage">
             <!--Bron: https://cdn.shopify.com/s/files/1/0062/5190/5079/files/got-bag_produkte_IMG_9433_3840x2160_crop_center.JPG -->
 
@@ -102,20 +98,21 @@
 
         <!--Vierde Section-->
         <section>
-            <article>
-                <h3>Meeresplastik Recycling</h3>
+            <!-- Deze section heeft geen heading. Dit geeft een warning in de validator, maar ik wist niet zo goed hoe ik het anders moet doen -->
+             <article>
+                <h5>Meeresplastik Recycling</h5>
                 <p>Mit dem PET-Recycling setzen wir in der Garnherstellung auf eine umweltfreundliche Alternative zu neuem Kunststoff. <em>106 Tonnen Meeresplastik konnten bisher geborgen werden</em>. So sparen wir mit jeder Tonne 3,8 Barrels Öl und 1700 kg CO2 und Wasser im Vergleich zum Industrie-Standard und über 139 Tonnen CO2-Emissionen.</p>
                 <img src="../images/missionPlastik.jpg" alt="seaturtles swimming in the ocean">
                 <!--Bron: https://cdn.shopify.com/s/files/1/0062/5190/5079/files/Screen_Shot_2020-05-08_at_17.35_2_2f96902a-ebf0-4c32-9889-066e8aa09a11_540x360_crop_center.png -->
             </article>
             <article>
-                <h3>Soziologischer & Ökologischer Mehrwert</h3>
+                <h5>Soziologischer & Ökologischer Mehrwert</h5>
                 <p>Wir organisieren Trainingssessions zur Mülltrennung, um ein <em>kollektives Bewusstsein</em>, auch über einheimische Multiplikatoren zu schaffen. Zusätzlich unterstützen wir in Indonesien <em>den Aufbau einer Abfallinfrastruktur</em> im ländlichen Raum. Längerfristig soll so auch die Regierung zum Umdenken hin zu einem Abfallwirtschaftssystem bewegt werden.</p>
                 <img src="../images/missionIndonesia.jpg" alt="Foto of people working with garbage">
                 <!--Bron: https://cdn.shopify.com/s/files/1/0062/5190/5079/files/got-bag_produkte_IMG_9433_3840x2160_crop_center.JPG -->
             </article>
             <article>
-                <h3>Innovative Bio-Beschichtung</h3>
+                <h5>Innovative Bio-Beschichtung</h5>
                 <p>Eine innovative Beschichtung sorgt für eine wasserabweisende Schicht auf dem Textil eines jeden GOT BAGs. <em>Sie besteht aus zu 100% biologisch abbaubaren Inhaltsstoffen.</em> Damit trägst du dazu bei, dass eine Belastung des Grundwassers vermieden und in der Herstellung Öl, Wasser und CO2 gespart wird. Unsere Produkte sind frei von PFC-Beschichtungen.</p>
                 <img src="../images/missionbag.jpg" alt="close-up of the backpack with raindrops on it">
                 <!--Bron: https://cdn.shopify.com/s/files/1/0062/5190/5079/files/images-1_5_6d1b2394-88e3-4cd3-b3bf-a54aeb069263_540x360_crop_center.png -->
@@ -124,6 +121,7 @@
 
         <!--Vijfde section-->
         <section id="produktionsstätten">
+           <!-- Deze section heeft geen heading. Dit geeft een warning in de validator, maar ik wist niet zo goed hoe ik het anders moet doen -->
             <article>
                 <h4>Unsere Produktionsstätte</h4>
                 <h4>QUANZHOU, FUJIAN PROVINCE, CHINA</h4>
@@ -139,18 +137,20 @@
                 <!--Bron: https://cdn.shopify.com/s/files/1/0062/5190/5079/files/200716_GB_Supply_Chain_Map_v4_1_d56ce3a7-c506-4504-b2d8-e4ce248cc92f.png -->
                 <p>Indonesien ist zwar als eines der weltweiten Epizentren der Plastikvermüllung bekannt, aber auch das nur weil wir alle einen Teil dazu beitragen, dass der Müll dorthin verschifft wird.</p>
                 <ol>
-                   <img src="../images/missionOl1.jpg" alt="Ship in a harbour">
+                    <li>
+                    <img src="../images/missionOl1.jpg" alt="Ship in a harbour">
                     <!--Bron: https://cdn.shopify.com/s/files/1/0062/5190/5079/files/Ellipse_13_168x168_crop_center.png -->
-                    <li> Meeresplastik wird von unserem Netzwerk aus mittlerweile <em>1500 Fischern</em> an der Nordküste Javas als Beifang gesammelt. Das Plastik aus ihren Netzen, wird gereinigt und sortiert.</li>
+                    Meeresplastik wird von unserem Netzwerk aus mittlerweile <em>1500 Fischern</em> an der Nordküste Javas als Beifang gesammelt. Das Plastik aus ihren Netzen, wird gereinigt und sortiert.</li>
+                    <li>
                     <img src="../images/missionOl2.jpg" alt="Person holding plastic pallets in hand">
-                    <!--Bron: //cdn.shopify.com/s/files/1/0062/5190/5079/files/Ellipse_15_168x168_crop_center.png -->
-                    <li> Nach der Reinigung wird der PET-Anteil in Pellets zerschreddert. Die verbliebenen Reste werden über die entsprechende Wertschöpfungskette entsorgt. </li>
+                    <!--Bron: //cdn.shopify.com/s/files/1/0062/5190/5079/files/Ellipse_15_168x168_crop_center.png -->Nach der Reinigung wird der PET-Anteil in Pellets zerschreddert. Die verbliebenen Reste werden über die entsprechende Wertschöpfungskette entsorgt. </li>
+                    <li>
                     <img src="../images/missionOl3.jpg" alt="Women working on sewing machine">
-                    <!--Bron: //cdn.shopify.com/s/files/1/0062/5190/5079/files/Ellipse_14_168x168_crop_center.png -->
-                    <li> Von der Sammelstelle in Indonesien werden die Pellets <em>durch die regionale Nähe</em> via Schiff zu unserer Produktion in Quangzhou in China gebracht. Dort wird aus den Plastikpellets ein hochwertiges Polyester-Garn hergestellt. </li>
+                    <!--Bron: //cdn.shopify.com/s/files/1/0062/5190/5079/files/Ellipse_14_168x168_crop_center.png --> Von der Sammelstelle in Indonesien werden die Pellets <em>durch die regionale Nähe</em> via Schiff zu unserer Produktion in Quangzhou in China gebracht. Dort wird aus den Plastikpellets ein hochwertiges Polyester-Garn hergestellt. </li>
+                    <li>
                     <img src="../images/missionOl4.jpg" alt="Woman wearing backpack walking at beach">
                     <!--Bron: //cdn.shopify.com/s/files/1/0062/5190/5079/files/Ellipse_16_168x168_crop_center.png -->
-                    <li> Aus dem Garn entsteht das Gewebe, das zur Herstellung deines GOT BAG verwendet wird. Für einen emissionsarmen Versand, wählen wir <em>Züge als Transportmittel</em> nach Europa und arbeiten an einer klimafreien Versandoption.</li>
+                     Aus dem Garn entsteht das Gewebe, das zur Herstellung deines GOT BAG verwendet wird. Für einen emissionsarmen Versand, wählen wir <em>Züge als Transportmittel</em> nach Europa und arbeiten an einer klimafreien Versandoption.</li>
                 </ol>
             </article>
         </section>
@@ -159,7 +159,7 @@
 
     <footer>
         <ul>
-            <li><a href="mailto: hello@got-bag.com">hello@got-bag.com</a></li>
+            <li><a href="mailto:hello@got-bag.com">hello@got-bag.com</a></li>
             <li><a href="https://got-bag.com/pages/legal-notice">Impressum</a></li>
             <li><a href="https://got-bag.com/pages/privacy-policy">Datenschutzerklärung</a></li>
             <li>Entwickelt mit <span>&#10084;</span> für die Meere.</li>
